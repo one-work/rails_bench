@@ -3,9 +3,15 @@
 
 <%= render layout: 'index_table' do %>
 <% @facilitates.group_by(&:facilitate_taxon).each do |taxon, facilitates| %>
-  <tr>
-    <td rowspan="<%= taxon.facilitates_count + 1 %>"><%= taxon.name %></td>
-  </tr>
+  <% if taxon %>
+    <tr>
+      <td rowspan="<%= taxon.facilitates_count + 1 %>"><%= taxon.name %></td>
+    </tr>
+  <% else %>
+    <tr>
+      <td rowspan="<%= facilitatles.size + 1 %>"></td>
+    </tr>
+  <% end %>
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: facilitates, as: :model %>
 <% end %>
 <% end %>
