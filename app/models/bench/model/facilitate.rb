@@ -14,7 +14,7 @@ module Bench
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
       belongs_to :standard, optional: true
-      belongs_to :facilitate_taxon, counter_cache: true
+      belongs_to :facilitate_taxon, counter_cache: true, optional: true
 
       has_one :facilitate_provider, -> { where(selected: true) }
       has_one :provider, through: :facilitate_provider
