@@ -1,6 +1,7 @@
 module Bench
   class My::FacilitatingsController < My::BaseController
     before_action :set_item
+    before_action :set_new_facilitating, only: [:new, :create]
 
     def index
       @facilitatings = @item.facilitatings
@@ -11,7 +12,7 @@ module Bench
       @item = Trade::Item.find params[:item_id]
     end
 
-    def set_facilitating
+    def set_new_facilitating
       @facilitating = @item.facilitatings.build(facilitating_params)
       @facilitating.facilitate_id = @item.good_id
     end
