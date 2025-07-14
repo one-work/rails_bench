@@ -13,6 +13,7 @@ module Bench
 
     def set_facilitating
       @facilitating = @item.facilitatings.build(facilitating_params)
+      @facilitating.facilitate_id = @item.good_id
     end
 
     def facilitating_params
