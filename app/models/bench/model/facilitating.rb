@@ -6,6 +6,7 @@ module Bench
       attribute :start_at, :datetime
       attribute :finish_at, :datetime
       attribute :estimate_finish_at, :datetime
+      attribute :extra, :json, default: {}
 
       belongs_to :facilitate
       belongs_to :facilitator, optional: true

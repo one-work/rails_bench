@@ -11,5 +11,15 @@ module Bench
       @item = Trade::Item.find params[:item_id]
     end
 
+    def set_facilitating
+      @facilitating = @item.facilitatings.build(facilitating_params)
+    end
+
+    def facilitating_params
+      params.fetch(:facilitating, {}).permit(
+        extra: {}
+      )
+    end
+
   end
 end
