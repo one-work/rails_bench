@@ -14,7 +14,7 @@ module Bench
       belongs_to :user, class_name: 'Auth::User', optional: true
       belongs_to :member, class_name: 'Org::Member', optional: true
       belongs_to :wallet_payment, class_name: 'Trade::WalletPayment', optional: true
-      belongs_to :item, class_name: 'Trade::Item'
+      belongs_to :item, class_name: 'Trade::Item', optional: true
 
       after_save_commit :send_notice, if: -> { (saved_changes.keys & ['member_id', 'start_at', 'finish_at']).present? }
     end

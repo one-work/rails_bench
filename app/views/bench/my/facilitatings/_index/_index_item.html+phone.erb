@@ -1,13 +1,11 @@
 <p class="text-centered py-2">
-  <strong><%= facilitating.item.good_name %></strong>
+  <strong><%= facilitating.facilitate.name %></strong>
 </p>
-<div class="text-centered">
-<% unless facilitating.member %>
-  <figure class="image">
-    <%= image_tag facilitating.qrcode_enter_url %>
-    <figcaption class="text-centered">出示二维码核销</figcaption>
-  </figure>
-<% end %>
-</div>
-<%= render partial: 'facilitating_preview', locals: { facilitating: facilitating } %>
-<%= turbo_stream_from facilitating %>
+<dl id="facilitating_<%= facilitating.id %>" class="as-show as-boxed">
+  <% facilitating.extra.each do |k, v| %>
+    <div>
+      <dt><%= Bench::Facilitating.human_attribute_name("extra/#{k}") %></dt>
+      <dd><%= v %></dd>
+    </div>
+  <% end %>
+</dl>

@@ -1,24 +1,19 @@
 module Bench
   class My::FacilitatingsController < My::BaseController
-    before_action :set_item
     before_action :set_new_facilitating, only: [:new, :create]
 
     def index
-      @facilitatings = @item.facilitatings
+      @facilitatings = current_user.facilitatings
     end
 
     private
-    def set_item
-      @item = Trade::Item.find params[:item_id]
-    end
-
     def set_new_facilitating
-      @facilitating = @item.facilitatings.build(facilitating_params)
-      @facilitating.facilitate_id = @item.good_id
+      @facilitating = current_user.facilitatings.build(facilitating_params)
     end
 
     def facilitating_params
       params.fetch(:facilitating, {}).permit(
+        :facilitate_id,
         extra: {}
       )
     end
