@@ -170,4 +170,7 @@ Rails.application.routes.draw do
   resolve 'Bench::Facilitate' do |facilitate, options|
     url_for(controller: '/bench/facilitates', action: 'show', id: facilitate, **options)
   end
+  resolve 'Bench::Facilitating' do |facilitating, options|
+    url_for(controller: 'bench/my/facilitatings', action: 'show', id: facilitating, **options)
+  end
 end

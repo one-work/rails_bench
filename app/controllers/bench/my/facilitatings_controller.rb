@@ -1,6 +1,7 @@
 module Bench
   class My::FacilitatingsController < My::BaseController
     before_action :set_new_facilitating, only: [:new, :create]
+    before_action :set_new_order, only: [:index]
 
     def index
       @facilitatings = current_user.facilitatings
@@ -16,6 +17,11 @@ module Bench
         :facilitate_id,
         extra: {}
       )
+    end
+
+    def set_new_order
+      @order = current_user.orders.build
+      @order.items.build
     end
 
   end

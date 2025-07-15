@@ -9,3 +9,15 @@
     </div>
   <% end %>
 </dl>
+
+<%= form_with model: @order, url: { controller: 'trade/my/orders', action: 'create' }, class: 'button_column' do |f| %>
+  <%= f.fields :items do |ef| %>
+    <%= ef.hidden_field :good_id, value: facilitating.id %>
+    <%= ef.hidden_field :good_type, value: facilitating.base_class_name %>
+    <%= ef.hidden_field :good_name, value: facilitating.facilitate.name %>
+    <%= ef.hidden_field :status, value: 'ordered' %>
+  <% end %>
+  <%= button_tag class: 'button is-outlined is-success is-block' do %>
+    <div class="description text-danger">确认订单</div>
+  <% end %>
+<% end %>
