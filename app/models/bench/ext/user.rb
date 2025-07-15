@@ -7,6 +7,7 @@ module Bench
 
       has_one :github_user
       has_many :tasks, class_name: 'Bench::Task', dependent: :destroy
+      has_many :facilitatings, class_name: 'Bench::Facilitating', dependent: :destroy
     end
 
     def github_client

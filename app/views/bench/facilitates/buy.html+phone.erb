@@ -1,0 +1,6 @@
+<%= image_tag @facilitate.logo, class: 'image' %>
+
+<%= form_with theme: 'weui', model: @facilitating, url: { controller: 'bench/my/facilitatings', action: 'create' } do |f| %>
+  <%= render partial: 'bench/my/facilitatings/form', locals: { f: f } %>
+  <%= f.submit %>
+<% end %>

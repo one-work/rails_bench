@@ -10,6 +10,8 @@ module Bench
 
       belongs_to :facilitate
       belongs_to :facilitator, optional: true
+
+      belongs_to :user, class_name: 'Auth::User', optional: true
       belongs_to :member, class_name: 'Org::Member', optional: true
       belongs_to :wallet_payment, class_name: 'Trade::WalletPayment', optional: true
       belongs_to :item, class_name: 'Trade::Item'

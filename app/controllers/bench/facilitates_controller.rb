@@ -13,10 +13,10 @@ module Bench
     end
 
     def buy
-      q_params = {}
-      q_params.merge! default_params
-
-      @facilitates = Facilitate.default_where(q_params).page(params[:page])
+      @facilitate = Facilitate.default_where(default_params).first
+      if current_user
+        @facilitating = @facilitate.facilitatings.build(user_id: current_user.id)
+      end
     end
 
     def order
