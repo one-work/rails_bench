@@ -3,10 +3,12 @@
 </p>
 <dl id="facilitating_<%= facilitating.id %>" class="as-show as-boxed">
   <% facilitating.extra.each do |k, v| %>
+    <% unless k.end_with?('i)') %>
     <div>
       <dt><%= Bench::Facilitating.human_attribute_name("extra/#{k}") %></dt>
       <dd><%= v %></dd>
     </div>
+    <% end %>
   <% end %>
 </dl>
 
