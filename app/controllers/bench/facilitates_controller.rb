@@ -16,6 +16,8 @@ module Bench
       @facilitate = Facilitate.default_where(default_params).first
       if current_user
         @facilitating = @facilitate.facilitatings.build(user_id: current_user.id)
+      else
+        head :ok
       end
     end
 
