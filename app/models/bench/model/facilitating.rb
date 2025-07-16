@@ -16,6 +16,7 @@ module Bench
       belongs_to :wallet_payment, class_name: 'Trade::WalletPayment', optional: true
       belongs_to :item, class_name: 'Trade::Item', optional: true
 
+      before_validation :sync_from_facilitate
       after_save_commit :send_notice, if: -> { (saved_changes.keys & ['member_id', 'start_at', 'finish_at']).present? }
     end
 
@@ -26,7 +27,8 @@ module Bench
       end
     end
 
-    def sync_from
+    def sync_from_facilitate
+      self.price = faciliate.price
     end
 
     def enter_url
