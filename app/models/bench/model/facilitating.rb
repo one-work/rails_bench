@@ -28,7 +28,7 @@ module Bench
     end
 
     def sync_from_facilitate
-      self.price = faciliate.price
+      self.price = facilitate.price
     end
 
     def enter_url
