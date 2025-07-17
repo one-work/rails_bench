@@ -7,6 +7,22 @@ module Bench
       @facilitatings = current_user.facilitatings.order(id: :desc).page(params[:page])
     end
 
+    def create
+      if @facilitating.save
+        order = current_user.orders.build(
+          items_attributes: [{
+            good_id: @facilitating.id,
+            good_type: @facilitating.base_class_name,
+            good_name: @facilitating.facilitate.name,
+            status: 'ordered'
+          }]
+        )
+        order.save
+
+        redirect_to controller: 'trade/my/orders', action: 'payment_types', id: order.id
+      end
+    end
+
     private
     def set_new_facilitating
       @facilitating = current_user.facilitatings.build(facilitating_params)
