@@ -4,7 +4,7 @@ module Bench
     before_action :set_new_order, only: [:index]
 
     def index
-      @facilitatings = current_user.facilitatings
+      @facilitatings = current_user.facilitatings.order(id: :desc).page(params[:page])
     end
 
     private
