@@ -15,7 +15,8 @@ module Bench
             good_type: @facilitating.base_class_name,
             good_name: @facilitating.facilitate.name,
             status: 'ordered'
-          }]
+          }],
+          **default_form_params
         )
         order.save
 
