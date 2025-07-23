@@ -3,3 +3,4 @@
 <td><%= model.note %></td>
 <td><%= model.financial_taxon.name %></td>
 <td><%= model.invoices_count %></td>
+<td><%= render partial: 'index_tr_actions', locals: { model: model } %></td>
