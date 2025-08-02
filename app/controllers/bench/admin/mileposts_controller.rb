@@ -1,6 +1,7 @@
 module Bench
   class Admin::MilepostsController < Admin::BaseController
     before_action :set_milepost, only: [:show, :edit, :update, :move_higher, :move_lower, :destroy]
+    before_action :set_new_milepost, only: [:new, :create]
 
     def index
       q_params = {}
@@ -9,21 +10,13 @@ module Bench
       @mileposts = Milepost.default_where(q_params).page(params[:page])
     end
 
-    def new
-      @milepost = Milepost.new
-    end
-
-    def create
-      @milepost = Milepost.new(milepost_params)
-
-      unless @milepost.save
-        render :new, locals: { model: @milepost }, status: :unprocessable_entity
-      end
-    end
-
     private
     def set_milepost
       @milepost = Milepost.find params[:id]
+    end
+
+    def set_new_milepost
+      @milepost = Milepost.new(milepost_params)
     end
 
     def milepost_params
