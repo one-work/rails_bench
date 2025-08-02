@@ -71,6 +71,10 @@ module Bench
       @taxon = Taxon.find params[:taxon_id]
     end
 
+    def set_new_task_template
+
+    end
+
     def set_task_template
       @task_template = TaskTemplate.find(params[:id])
     end

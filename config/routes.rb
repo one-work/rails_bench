@@ -86,6 +86,7 @@ Rails.application.routes.draw do
         resources :facilitate_indicators
         resources :facilitate_providers
       end
+      resources :facilitatings
       resources :project_stages
       resources :project_states
       resources :projects do
