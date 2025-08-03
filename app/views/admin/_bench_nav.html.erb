@@ -1,7 +1,7 @@
 <div class="menu-list">
   <%= link_to({ controller: 'bench/admin/home' }, text: true, data: { turbo_frame: 'body', action: 'menu#enter' }, class: 'menu-item') do %>
     <div>
-      <i class="fa-solid fa-fw fa-share-alt"></i>
+      <%= svg_tag 'share-nodes', class: 'icon' %>
       <span><%= t('bench.admin.title') %></span>
     </div>
   <% end %>
