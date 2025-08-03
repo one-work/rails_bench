@@ -33,6 +33,9 @@ zh:
           title: 流程
         show:
           title: 服务详情
+      facilitatings:
+        index:
+          title: 待服务列表
       projects:
         index:
           title: 项目库
