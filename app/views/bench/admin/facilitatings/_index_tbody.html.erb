@@ -1,1 +1,20 @@
 <td><%= model.facilitate.name %></td>
+<td>
+  <dl class="as-show">
+  <% model.extra.each do |key, value| %>
+    <div>
+      <dt><%= Bench::Facilitating.human_attribute_name("extra/#{key}") %></dt>
+      <dd><%= value %></dd>
+    </div>
+  <% end %>
+  </dl>
+</td>
+<td>
+  <% if model.start_at %>
+    <p><time data-controller="time"><%= model.start_at.to_fs(:iso8601) %></time></p>
+  <% end %>
+  <% if model.finish_at %>
+    <p><time data-controller="time"><%= model.finish_at.to_fs(:iso8601) %></time></p>
+  <% end %>
+</td>
+<td><%= render partial: 'index_tr_actions', locals: { model: model } %></td>
