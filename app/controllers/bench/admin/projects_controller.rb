@@ -2,6 +2,7 @@ module Bench
   class Admin::ProjectsController < Admin::BaseController
     before_action :set_project, only: [:show, :task_templates, :edit, :repos, :github_hook, :update, :sync, :destroy]
     before_action :prepare_form, only: [:index, :new, :edit]
+    before_action :set_new_project, only: [:new, :create]
 
     def index
       q_params = {}
@@ -39,12 +40,12 @@ module Bench
       @project = Project.find(params[:id])
     end
 
-    def xx
-      @project = @taxon.projects.build(project_params)
-    end
-
     def set_taxon
       @taxon = @project.taxon
+    end
+
+    def set_new_project
+      @project = @taxon.projects.build(project_params)
     end
 
     def prepare_form
