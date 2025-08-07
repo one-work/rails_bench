@@ -16,7 +16,7 @@
         <i class="fa-solid fa-pencil"></i>
       <% end %>
       <%= button_to({ action: 'destroy', id: task_template.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'text-danger') do %>
-        <i class="fa-solid fa-trash"></i>
+        <%= svg_tag 'trash', class: 'icon' %>
       <% end %>
       <%= button_to({ action: 'new', project_taxon_id: params[:project_taxon_id], parent_id: task_template.id }) do %>
         <i class="fa-solid fa-plus"></i>

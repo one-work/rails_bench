@@ -5,7 +5,7 @@
 <div>
   <dt><%= Bench::Taxon.human_attribute_name(:projects_count) %></dt>
   <dd>
-    <%= link_to({ controller: 'projects', taxon_id: @taxon.id }, text: true, aria: { label: t('bench.admin.projects.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <%= link_to({ controller: 'projects', taxon_id: @taxon.id }, text: true, aria: { label: t('bench.admin.projects.index.title') }, class: 'button is-small is-borderless') do %>
       <i class="fa-solid fa-list-ul"></i><span><%= @taxon.projects_count %></span>
     <% end %>
   </dd>

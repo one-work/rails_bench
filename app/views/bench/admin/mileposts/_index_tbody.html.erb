@@ -9,11 +9,11 @@
 </td>
 <td><%= model.project_mileposts_count %></td>
 <td>
-  <%= link_to({ action: 'edit', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ action: 'edit', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
     <i class="fa-solid fa-pencil"></i>
   <% end %>
-  <%= link_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-rounded is-light') do %>
-    <i class="fa-solid fa-trash"></i>
+  <%= link_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless') do %>
+    <%= svg_tag 'trash', class: 'icon' %>
   <% end %>
 </td>
 <td><%= render partial: 'index_tr_actions', locals: { model: model } %></td>
