@@ -1,9 +1,9 @@
 <div class="fixed-grid has-6-cols">
   <div class="grid">
-    <%= link_to({ controller: 'bench/panel/taxons' }, class: 'cell button is-fullwidth') do %>
+    <%= link_to({ controller: 'bench/panel/taxons' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
       <span><%= t('bench.panel.taxons.index.title') %></span>
     <% end %>
-    <%= link_to({ controller: 'bench/panel/indicators' }, class: 'cell button is-fullwidth') do %>
+    <%= link_to({ controller: 'bench/panel/indicators' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
       <span><%= t('bench.panel.indicators.index.title') %></span>
     <% end %>
   </div>
