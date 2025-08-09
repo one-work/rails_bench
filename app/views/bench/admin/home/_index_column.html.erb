@@ -1,0 +1,21 @@
+<div class="fixed-grid has-6-cols">
+  <div class="grid">
+    <%= link_to({ controller: 'bench/admin/projects' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('bench.admin.projects.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'bench/admin/mileposts' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('bench.admin.mileposts.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'bench/admin/facilitatings' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: ['facilitatings'], item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+      <span><%= t('bench.admin.facilitatings.index.title') %></span>
+    <% end %>
+  </div>
+  <div class="grid">
+    <%= link_to({ controller: 'bench/admin/facilitates' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('bench.admin.facilitates.index.title') %></span>
+    <% end %>
+    <%= link_to({ controller: 'bench/admin/facilitate_taxons' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+      <span><%= t('bench.admin.facilitate_taxons.index.title') %></span>
+    <% end %>
+  </div>
+</div>
