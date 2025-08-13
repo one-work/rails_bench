@@ -8,5 +8,5 @@
   <i class="fa-solid fa-pencil"></i>
 <% end %>
 <%= link_to({ action: 'destroy', id: project_stage.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless') do %>
-  <%= svg_tag 'trash', class: 'icon' %>
+  <%= svg_tag 'trash' %>
 <% end %>
