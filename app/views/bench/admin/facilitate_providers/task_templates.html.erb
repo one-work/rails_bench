@@ -5,7 +5,7 @@
     <% end %>
     <div id="item_add">
       <%= link_to new_me_task_template_path(tasking_type: 'FacilitateProvider', tasking_id: @facilitate_provider.id) do %>
-        <i class="fa-solid fa-plus"></i>
+        <%= svg_tag 'plus' %>
       <% end %>
     </div>
   </div>

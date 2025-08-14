@@ -4,7 +4,7 @@
   <%= render partial: 'index_item', collection: @task_templates, as: :task_template %>
   <div id="item_add">
     <%= button_to({ action: 'new', taxon_id: params[:taxon_id] }) do %>
-      <i class="fa-solid fa-plus"></i>
+      <%= svg_tag 'plus' %>
     <% end %>
   </div>
 </div>

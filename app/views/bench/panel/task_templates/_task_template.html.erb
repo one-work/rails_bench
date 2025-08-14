@@ -19,7 +19,7 @@
         <%= svg_tag 'trash' %>
       <% end %>
       <%= button_to({ action: 'new', project_taxon_id: params[:project_taxon_id], parent_id: task_template.id }) do %>
-        <i class="fa-solid fa-plus"></i>
+        <%= svg_tag 'plus' %>
       <% end %>
     </div>
   </div>
