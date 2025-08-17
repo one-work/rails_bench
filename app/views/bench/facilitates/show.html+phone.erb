@@ -1,15 +1,23 @@
+<% if @facilitate.covers.length > 0 %>
 <div class="box">
-  <%= render partial: 'covers', locals: { model: @facilitate } if @facilitate.covers.length > 0 %>
+  <%= render partial: 'covers', locals: { model: @facilitate } %>
 </div>
+<% end %>
 
-<div class="box is-padding-less" style="z-index: 3">
-  <div class="box-header">
-    <span class="text-danger"><%= @facilitate.price.to_money.format.html_safe %></span>
-    <span class="text-grey pl-2">预付</span>
-    <span class="text-danger-dark"><%= @facilitate.advance_price.to_money.format.html_safe %></span>
+<dl class="box as-show">
+  <div>
+    <dt><%= Bench::Facilitate.human_attribute_name(:price) %></dt>
+    <dd><%= @facilitate.price.to_money.format.html_safe %></dd>
   </div>
-  <div class="weui-panel__bd p-4 text-grey"><%= simple_format @facilitate.description %></div>
-</div>
+  <div>
+    <dt><%= Bench::Facilitate.human_attribute_name(:advance_price) %></dt>
+    <dd><%= @facilitate.advance_price.to_money.format.html_safe %></dd>
+  </div>
+  <div>
+    <dt></dt>
+    <dd><%= simple_format @facilitate.description %></dd>
+  </div>
+</dl>
 
 <% if @facilitate.facilitators.present? %>
 <div class="box is-padding-less">
