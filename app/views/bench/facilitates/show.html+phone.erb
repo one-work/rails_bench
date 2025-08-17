@@ -9,10 +9,12 @@
     <dt><%= Bench::Facilitate.human_attribute_name(:price) %></dt>
     <dd><%= @facilitate.price.to_money.format.html_safe %></dd>
   </div>
-  <div>
-    <dt><%= Bench::Facilitate.human_attribute_name(:advance_price) %></dt>
-    <dd><%= @facilitate.advance_price.to_money.format.html_safe %></dd>
-  </div>
+  <% if @facilitate.advance_price > 0 %>
+    <div>
+      <dt><%= Bench::Facilitate.human_attribute_name(:advance_price) %></dt>
+      <dd><%= @facilitate.advance_price.to_money.format.html_safe %></dd>
+    </div>
+  <% end %>
   <div>
     <dt></dt>
     <dd><%= simple_format @facilitate.description %></dd>
