@@ -11,15 +11,15 @@
 </div>
 <div data-show-target="item" class="visibility-hidden">
   <%= link_to({ controller: 'facilitate_indicators', facilitate_id: model.id }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-smile-beam"></i>
+    <%= svg_tag 'face-smile-beam' %>
     <span class="ml-1"><%= t('.facilitate_indicators.index.title') %></span>
   <% end %>
   <%= link_to({ controller: 'facilitate_providers', facilitate_id: model.id }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-search"></i>
+    <%= svg_tag 'user-magnifying-glass' %>
     <span class="ml-1"><%= t('.facilitate_providers.index.title') %></span>
   <% end %>
   <%= link_to({ controller: 'facilitators', facilitate_id: model.id }, class: 'button is-small is-borderless') do %>
-    <i class="fa-solid fa-user-ninja"></i>
+    <%= svg_tag 'user-tie' %>
     <span class="ml-1"><%= t('.facilitators.index.title') %></span>
   <% end %>
 </div>
