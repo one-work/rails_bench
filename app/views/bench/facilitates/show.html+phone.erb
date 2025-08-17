@@ -12,9 +12,9 @@
 </div>
 
 <% if @facilitate.facilitators.present? %>
-<div class="box">
+<div class="box is-padding-less">
   <div class="box-header">服务人员</div>
-  <div class="weui-panel__bd">
+  <div class="px-3 pb-3">
     <%= render partial: 'facilitator', collection: @facilitate.facilitators, as: :model %>
   </div>
 </div>

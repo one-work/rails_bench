@@ -1,9 +1,9 @@
-<div class="weui-media-box weui-media-box_appmsg is-box">
-  <div class="weui-media-box__hd as-logo">
+<div class="media">
+  <div class="media-left as-logo">
     <%= image_tag model.avatar, class: 'image is-64x64' if model.avatar.attached? %>
   </div>
-  <div class="weui-media-box__bd as-body">
-    <%= link_to({ controller: 'facilitators', action: 'show', facilitate_id: @facilitate.id, id: model.id }, class: 'weui-media-box__title') do %>
+  <div class="media-content as-body">
+    <%= link_to({ controller: 'facilitators', action: 'show', facilitate_id: @facilitate.id, id: model.id }, class: '') do %>
       <span class="text-link-dark"><%= model.name %></span>
     <% end %>
     <div class="text-grey"><%= model.description %></div>
