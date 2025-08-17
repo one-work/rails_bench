@@ -1,7 +1,7 @@
 <%= render 'index_bar' %>
 <%= render 'index_actions' %>
 
-<%= render layout: 'index_table' do %>
+<%= render layout: 'index_table_without_striped' do %>
 <% @facilitates.group_by(&:facilitate_taxon).each do |taxon, facilitates| %>
   <% if taxon %>
     <tr>
