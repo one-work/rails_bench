@@ -1,4 +1,6 @@
 regular:
+  - angle-left
+  - angle-right
   - face-smile-beam
   - share-nodes
   - user-magnifying-glass
