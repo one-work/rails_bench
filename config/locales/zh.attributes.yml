@@ -4,6 +4,8 @@ zh:
       bench/facilitate:
         facilitate_taxon_id: 分类
         price: 价格
+        advance_price: 预付款
+        unit: 单位
       bench/facilitator:
         member_id: 服务人员
       bench/facilitating:
