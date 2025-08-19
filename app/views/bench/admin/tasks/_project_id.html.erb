@@ -4,7 +4,7 @@
   <td><%= @task.project&.name %></td>
   <td>
     <%= link_to({ action: 'edit', id: @task.id, item: 'project_id' }) do %>
-      <i class="fa-solid fa-pencil"></i>
+      <%= svg_tag 'pencil' %>
     <% end %>
   </td>
 </tr>

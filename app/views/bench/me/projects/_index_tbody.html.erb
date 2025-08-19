@@ -11,7 +11,7 @@
   <td><%= project.state_i18n %></td>
   <td>
     <%= link_to edit_me_project_path(project), class: 'button is-small is-borderless' do %>
-      <i class="fa-solid fa-pencil"></i>
+      <%= svg_tag 'pencil' %>
     <% end %>
     <%= link_to me_project_path(project), method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless' do %>
       <%= svg_tag 'trash' %>

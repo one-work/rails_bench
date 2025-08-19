@@ -6,7 +6,7 @@
   <div class="level-right">
   <% if @task.leaf? %>
     <%= link_to({ action: 'edit', id: @task.id }, item: 'estimated_time') do %>
-      <i class="fa-solid fa-pencil"></i>
+      <%= svg_tag 'pencil' %>
     <% end %>
   <% end %>
   </div>

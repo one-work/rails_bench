@@ -13,7 +13,7 @@
     </div>
     <div data-show-target="item" class="level-item visibility-hidden">
       <%= button_to({ action: 'edit', id: task_template.id, item: 'title' }, aria: { label: t('.edit.title') }, class: 'text-grey') do %>
-        <i class="fa-solid fa-pencil"></i>
+        <%= svg_tag 'pencil' %>
       <% end %>
       <%= button_to({ action: 'destroy', id: task_template.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'text-danger') do %>
         <%= svg_tag 'trash' %>
