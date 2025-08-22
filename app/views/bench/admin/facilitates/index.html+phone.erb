@@ -1,8 +1,10 @@
 <%= render layout: 'index_list' do %>
-<% @facilitates.group_by(&:facilitate_taxon).each do |taxon, facilitates| %>
-  <div class="box-body"><%= taxon.name %></div>
-  <%= render partial: 'index_item', layout: 'index_item_actions', collection: facilitates, as: :model %>
-<% end %>
+  <% @facilitates.group_by(&:facilitate_taxon).each do |taxon, facilitates| %>
+    <% if taxon %>
+      <div class="box-body"><%= taxon.name %></div>
+    <% end %>
+    <%= render partial: 'index_item', layout: 'index_item_actions', collection: facilitates, as: :model %>
+  <% end %>
 <% end %>
 
 <%= paginate @facilitates %>
