@@ -1,8 +1,10 @@
 regular:
   - angle-left
   - angle-right
+  - eye
   - face-smile-beam
   - pencil
   - share-nodes
+  - trash
   - user-magnifying-glass
   - user-tie
