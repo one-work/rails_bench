@@ -1,10 +1,10 @@
 <td>
   <span><%= model.name %></span>
   <%= button_to({ action: 'move_higher', id: model.id }, method: :patch, data: { 'show-target': 'item' }, class: 'visibility-hidden') do %>
-    <i class="fa-solid fa-arrow-up"></i>
+    <%= svg_tag 'arrow-up' %>
   <% end %>
   <%= button_to({ action: 'move_lower', id: model.id }, method: :patch, data: { 'show-target': 'item' }, class: 'visibility-hidden') do %>
-    <i class="fa-solid fa-arrow-down"></i>
+    <%= svg_tag 'arrow-down' %>
   <% end %>
 </td>
 <td><%= model.project_mileposts_count %></td>

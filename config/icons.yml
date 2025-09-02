@@ -1,6 +1,8 @@
 regular:
   - angle-left
   - angle-right
+  - arrow-up
+  - arrow-down
   - eye
   - face-smile-beam
   - pencil
