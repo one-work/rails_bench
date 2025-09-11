@@ -12,7 +12,7 @@
     </li>
     <li class="<%= active_helper(controllers: 'taxon_indicators', active: 'is-active') %>">
       <%= link_to({ controller: 'taxon_indicators', action: 'index', taxon_id: taxon.id }) do %>
-        <i class="fa-solid fa-grin"></i>
+        <%= svg_tag 'face-grin' %>
         <span class="ml-1"><%= t('.taxon_indicators.index.title') %></span>
       <% end %>
     </li>
