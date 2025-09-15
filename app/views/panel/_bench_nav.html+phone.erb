@@ -1,20 +1,18 @@
 <div class="box is-padding-less">
   <div class="box-header">
-    <i class="fa-solid fa-fw fa-user-ninja text-primary"></i>
-    <span><%= t('bench.panel.title') %></span>
+    <div>
+      <%= svg_tag 'user-ninja' %>
+      <span><%= t('bench.panel.title') %></span>
+    </div>
   </div>
-  <div class="weui-panel__bd">
-    <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
-      <%= link_to({ controller: 'bench/panel/taxons' }, class: 'column has-block-centered') do %>
-        <div class="text-primary">
-          <i class="fa-solid fa-fw fa-xl fa-user-ninja"></i>
-        </div>
+  <div class="fixed-grid has-3-cols is-shadow p-3">
+    <div class="grid">
+      <%= link_to({ controller: 'bench/panel/taxons' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'user-ninja', class: 'icon is-medium' %>
         <div class="text-grey size-7 mt-1"><%= t('bench.panel.taxons.index.title') %></div>
       <% end %>
-      <%= link_to({ controller: 'bench/panel/indicators' }, class: 'column has-block-centered') do %>
-        <div class="text-primary">
-          <i class="fa-solid fa-fw fa-xl fa-user-ninja"></i>
-        </div>
+      <%= link_to({ controller: 'bench/panel/indicators' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'user-ninja', class: 'icon is-medium' %>
         <div class="text-grey size-7 mt-1"><%= t('bench.panel.indicators.index.title') %></div>
       <% end %>
     </div>
