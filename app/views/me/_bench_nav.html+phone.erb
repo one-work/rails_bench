@@ -1,13 +1,13 @@
 <div class="box is-padding-less">
-  <div class="box-body">
+  <div class="box-header">
     <span class="size-7 has-border-left-primary"><%= t('bench.me.title') %></span>
   </div>
-  <div class="columns is-4-mobile flex is-vcentered is-centered m-0 is-shadow" data-empty-target="content">
-    <%= link_to({ controller: 'bench/me/facilitatings' }, class: 'column has-column-centered') do %>
-      <div class="text-primary">
-        <i class="fa-solid fa-user-ninja fa-fw fa-xl"></i>
-      </div>
-      <div class="text-grey size-7 mt-1"><%= t('bench.me.facilitatings.index.title') %></div>
-    <% end %>
+  <div class="fixed-grid has-3-cols is-shadow-top p-3">
+    <div class="grid">
+      <%= link_to({ controller: 'bench/me/facilitatings' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'user-ninja', class: 'icon is-medium text-primary' %>
+        <div class="text-grey size-7 mt-1"><%= t('bench.me.facilitatings.index.title') %></div>
+      <% end %>
+    </div>
   </div>
 </div>
