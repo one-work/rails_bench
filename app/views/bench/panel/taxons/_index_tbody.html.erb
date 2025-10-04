@@ -20,7 +20,7 @@
   </div>
   <div data-show-target="item" class="visibility-hidden">
     <%= button_to({ action: 'parameter', id: model.id }, class: 'button is-small is-borderless') do %>
-      <i class="fa-solid fa-sitemap"></i>
+      <%= svg_tag 'sitemap' %>
       <span class="ml-1"><%= t('.parameter.title') %></span>
     <% end %>
   </div>
