@@ -2,6 +2,6 @@
 <%= f.number_field :price %>
 <%= f.number_field :advance_price %>
 <%= f.text_field :unit %>
-<%= f.file_field :logo %>
+<%= render 'com/attachments/list_field', target: f.object.logo, f: f %>
 <%= f.collection_select :facilitate_taxon_id, @facilitate_taxons, :id, :name if @facilitate_taxons.present? %>
 <%= f.text_area :description %>

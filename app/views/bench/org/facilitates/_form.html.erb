@@ -2,4 +2,4 @@
 <%= f.select :facilitate_taxon_id, options_from_collection_for_select(@facilitate_taxons, :id, :name, @facilitate.facilitate_taxon_id), include_blank: true %>
 <%= f.text_field :name %>
 <%= f.text_area :description %>
-<%= f.file_field :logo %>
+<%= render 'com/attachments/list_field', target: f.object.logo, f: f %>

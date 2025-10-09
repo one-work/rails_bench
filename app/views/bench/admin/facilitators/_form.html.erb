@@ -1,4 +1,4 @@
 <%= f.text_field :name %>
-<%= f.file_field :avatar %>
+<%= render 'com/attachments/list_field', target: f.object.avatar, f: f %>
 <%= f.collection_select :member_id, @members, :id, :name %>
 <%= f.text_area :description %>
