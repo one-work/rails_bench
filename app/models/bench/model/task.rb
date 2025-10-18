@@ -37,6 +37,7 @@ module Bench
         done: 'done',
         rework: 'rework'
       }, default: 'todo'
+
       enum :focus, {
         inbox: 'inbox',
         draft: 'draft',
