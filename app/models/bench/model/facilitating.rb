@@ -8,6 +8,8 @@ module Bench
       attribute :estimate_finish_at, :datetime
       attribute :extra, :json, default: {}
 
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
+
       belongs_to :facilitate
       belongs_to :facilitator, optional: true
 
@@ -28,6 +30,7 @@ module Bench
     end
 
     def sync_from_facilitate
+      self.organ_id = facilitate.organ_id
       self.price = facilitate.price
     end
 
