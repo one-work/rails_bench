@@ -39,11 +39,11 @@ module Bench
     end
 
     def qrcode_enter_png
-      QrcodeHelper.code_png(enter_url, border_modules: 0, fill: 'pink')
+      QrcodeUtil.code_png(enter_url, border_modules: 0, fill: 'pink')
     end
 
     def qrcode_enter_url
-      QrcodeHelper.data_url(enter_url)
+      QrcodeUtil.data_url(enter_url)
     end
 
     def send_notice
