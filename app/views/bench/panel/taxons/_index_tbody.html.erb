@@ -6,22 +6,3 @@
     <span class="pl-1"><%= model.projects_count %></span>
   <% end %>
 </td>
-<td>
-  <div data-show-target="item" class="visibility-hidden">
-    <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'eye', class: 'icon text-info' %>
-    <% end %>
-    <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'pencil', class: 'icon text-link' %>
-    <% end %>
-    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { turbo_confirm: t('.destroy.confirm') }, aria: { label: t('.destroy.title') }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'trash', class: 'icon text-danger' %>
-    <% end %>
-  </div>
-  <div data-show-target="item" class="visibility-hidden">
-    <%= button_to({ action: 'parameter', id: model.id }, class: 'button is-small is-borderless') do %>
-      <%= svg_tag 'sitemap' %>
-      <span class="ml-1"><%= t('.parameter.title') %></span>
-    <% end %>
-  </div>
-</td>

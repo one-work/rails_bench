@@ -8,11 +8,3 @@
   <% end %>
 </td>
 <td><%= model.project_mileposts_count %></td>
-<td>
-  <%= link_to({ action: 'edit', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.edit.title') }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'pencil' %>
-  <% end %>
-  <%= link_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy.title') }, data: { turbo_confirm: t('.destroy.confirm') }, class: 'button is-small is-borderless') do %>
-    <%= svg_tag 'trash' %>
-  <% end %>
-</td>
