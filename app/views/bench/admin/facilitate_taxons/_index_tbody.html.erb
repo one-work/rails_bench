@@ -1,4 +1,4 @@
 <td><%= model.name %></td>
 <td><%= model.description %></td>
-<td><%= model.indicators_count %></td>
-<td><%= model.facilitates_count %></td>
+<td><%= link_to model.indicators_count, { controller: 'indicators', facilitate_taxon_id: model.id } %></td>
+<td><%= link_to model.facilitates_count, { controller: 'facilitates', facilitate_taxon_id: model.id } %></td>

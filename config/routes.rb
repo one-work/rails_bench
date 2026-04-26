@@ -74,7 +74,9 @@ Rails.application.routes.draw do
 
     namespace 'admin', defaults: { namespace: 'admin' } do
       root 'home#index'
-      resources :facilitate_taxons
+      resources :facilitate_taxons do
+        resources :indicators
+      end
       resources :facilitates do
         member do
           match :wallet, via: [:get, :post]
