@@ -10,6 +10,8 @@ module Bench
       attribute :reference_max, :decimal
       attribute :target_source, :string
 
+      belongs_to :taxon
+
       has_many :taxon_indicators, dependent: :destroy
       has_many :project_indicators, dependent: :destroy
 
