@@ -31,7 +31,7 @@ module Bench
     end
 
     def order_deliverable(item)
-      rest = item.number - item.facilitatings.count
+      rest = (item.number - item.facilitatings.count).to_i
       rest.times do
         facilitatings.build(item_id: item.id)
       end
