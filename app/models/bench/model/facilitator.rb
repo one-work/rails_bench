@@ -7,9 +7,16 @@ module Bench
       attribute :description, :string
 
       belongs_to :facilitate
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :member, class_name: 'Org::Member'
 
       has_one_attached :avatar
+
+      before_validation :sync_organ_from_member
+    end
+
+    def sync_organ_from_member
+      self.organ = member.organ
     end
 
   end
