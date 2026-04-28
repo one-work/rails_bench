@@ -7,7 +7,6 @@ module Bench
     end
 
     def qrcode
-
     end
 
     def start
