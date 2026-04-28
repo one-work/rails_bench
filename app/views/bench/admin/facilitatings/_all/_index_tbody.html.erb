@@ -1,5 +1,13 @@
 <td><%= model.facilitate.name %></td>
 <td>
+  <% if model.facilitator %>
+  <div class="is-several">
+    <%= image_tag model.facilitator.avatar, class: 'image is-24x24' %>
+    <span><%= model.facilitator.name %></span>
+  </div>
+  <% end %>
+</td>
+<td>
   <dl class="as-show">
   <% model.extra.each do |key, value| %>
     <div>

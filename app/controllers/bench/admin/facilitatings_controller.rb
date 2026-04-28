@@ -13,7 +13,7 @@ module Bench
       q_params = {}
       q_params.merge! default_params
 
-      @facilitatings = Facilitating.includes(:orders).default_where(q_params).order(id: :desc).page(params[:page])
+      @facilitatings = Facilitating.includes(:facilitator).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     private
