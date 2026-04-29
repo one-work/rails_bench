@@ -18,7 +18,8 @@ module Bench
       belongs_to :wallet_payment, class_name: 'Trade::WalletPayment', optional: true
       belongs_to :item, class_name: 'Trade::Item', optional: true
 
-      before_validation :sync_from_facilitate
+      before_validation :sync_from_facilitate, if: -> { facilitate_id_changed? }
+      before_validation :sync_from_facilitator, if: -> { facilitator_id_changed? }
       after_save_commit :send_notice, if: -> { (saved_changes.keys & ['member_id', 'start_at', 'finish_at']).present? }
     end
 
@@ -32,6 +33,10 @@ module Bench
     def sync_from_facilitate
       self.organ_id = facilitate.organ_id
       self.price = facilitate.price
+    end
+
+    def sync_from_facilitator
+      self.member_id = facilitator.member_id
     end
 
     def enter_url
