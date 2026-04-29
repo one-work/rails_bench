@@ -8,6 +8,10 @@
         <%= svg_tag 'user-tie', class: 'icon is-medium text-primary' %>
         <div class="text-grey size-7 mt-1"><%= t('bench.admin.facilitates.index.title') %></div>
       <% end %>
+      <%= link_to({ controller: 'bench/admin/facilitatings' }, class: 'cell has-column-centered') do %>
+        <%= svg_tag 'user-tie', class: 'icon is-medium text-primary' %>
+        <div class="text-grey size-7 mt-1"><%= t('bench.admin.facilitatings.index.title') %></div>
+      <% end %>
     </div>
   </div>
 </div>
