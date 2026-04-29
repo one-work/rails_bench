@@ -4,6 +4,6 @@
 <p>
   <span class="tag is-success"><%= model.duration %>分钟</span>
   <time data-controller="time"><%= model.start_at&.to_fs(:iso8601) %></time>
-  <i class="fa-regular fa-right-long px-2"></i>
+  <%= svg_tag 'right-long', class: 'icon px-2' %>
   <time data-controller="time" data-format="HH:mm"><%= model.finish_at&.to_fs(:iso8601) %></time>
 </p>
