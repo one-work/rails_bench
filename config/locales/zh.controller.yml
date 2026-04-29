@@ -121,6 +121,8 @@ zh:
       facilitatings:
         index:
           title: 服务
+        qrcode:
+          title: 服务二维码
     my:
       facilitatings:
         index:
