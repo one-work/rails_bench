@@ -1,0 +1,6 @@
+<%= render layout: 'top_bar_left' do %>
+  <div class="bar-title"><%= t('.title', default: '') %></div>
+  <%= link_to({ controller: 'bench/admin/facilitatings' }, class: 'px-4') do %>
+    <%= svg_tag 'circle-user-circle-user' %>
+  <% end %>
+<% end %>
