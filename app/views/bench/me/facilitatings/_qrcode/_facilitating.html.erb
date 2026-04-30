@@ -29,7 +29,9 @@
     <time data-controller="time"><%= @facilitating.finish_at&.to_fs(:iso8601) %></time>
   </dd>
 </div>
+<% if @facilitating.start_at.present? && @facilitating.finish_at.present? %>
 <div>
   <dt>时间</dt>
   <dd><%= distance_time(@facilitating.start_at, @facilitating.finish_at) %></dd>
 </div>
+<% end %>
