@@ -2,7 +2,7 @@
   <strong><%= facilitating.item.good_name %></strong>
 </p>
 <div class="text-centered">
-<% unless facilitating.member %>
+<% if facilitating.start_at.blank? || facilitating.finish_at.blank? %>
   <figure class="image">
     <%= image_tag facilitating.qrcode_enter_url %>
     <figcaption class="text-centered">出示二维码核销</figcaption>

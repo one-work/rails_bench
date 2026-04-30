@@ -1,5 +1,5 @@
 module Bench
-  class My::ItemFacilitatingsController < My::BaseController
+  class My::Item::FacilitatingsController < My::FacilitatingsController
     before_action :set_item
     before_action :set_new_facilitating, only: [:new, :create]
 

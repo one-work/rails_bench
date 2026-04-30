@@ -70,6 +70,9 @@ Rails.application.routes.draw do
 
     namespace :my, defaults: { namespace: 'my' } do
       resources :facilitatings
+      resources :items, only: [] do
+        resources :facilitatings, controller: 'item/facilitatings'
+      end
     end
 
     namespace 'admin', defaults: { namespace: 'admin' } do
