@@ -4,23 +4,28 @@
 </div>
 <div>
   <dt><%= Bench::Facilitating.human_attribute_name(:item_id) %></dt>
-  <span><%= @facilitating.item.uuid %></span>
+  <dd><%= @facilitating.item.uuid %></dd>
 </div>
 <div>
   <dt><%= Bench::Facilitating.human_attribute_name(:member_id) %></dt>
-  <span>
-    <span><%= @facilitating.member&.name %></span>
-  </span>
+  <dd>
+    <%= image_tag @facilitating.facilitator.avatar, class: 'image is-32x32' %>
+    <span><%= @facilitating.facilitator.name %></span>
+  </dd>
 </div>
 <div>
   <dt><%= Bench::Facilitating.human_attribute_name(:start_at) %></dt>
-  <span class="weui-form-preview__value text-success">
+  <dd class="text-success">
     <time data-controller="time"><%= @facilitating.start_at&.to_fs(:iso8601) %></time>
-  </span>
+  </dd>
 </div>
 <div>
   <dt><%= Bench::Facilitating.human_attribute_name(:finish_at) %></dt>
-  <span class="weui-form-preview__value text-danger">
+  <dd class="text-danger">
     <time data-controller="time"><%= @facilitating.finish_at&.to_fs(:iso8601) %></time>
-  </span>
+  </dd>
+</div>
+<div>
+  <dt></dt>
+  <dd><%= distance_time(@facilitating.start_at, @facilitating.finish_at) %></dd>
 </div>
