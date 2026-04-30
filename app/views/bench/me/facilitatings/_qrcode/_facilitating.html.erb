@@ -9,8 +9,12 @@
 <div>
   <dt><%= Bench::Facilitating.human_attribute_name(:member_id) %></dt>
   <dd>
-    <%= image_tag @facilitating.facilitator.avatar, class: 'image is-32x32' %>
-    <span><%= @facilitating.facilitator.name %></span>
+    <div class="is-several">
+      <figure class="image is-rounded is-32x32">
+        <%= image_tag @facilitating.facilitator.avatar %>
+      </figure>
+      <span><%= @facilitating.facilitator.name %></span>
+    </div>
   </dd>
 </div>
 <div>
@@ -26,6 +30,6 @@
   </dd>
 </div>
 <div>
-  <dt></dt>
+  <dt>时间</dt>
   <dd><%= distance_time(@facilitating.start_at, @facilitating.finish_at) %></dd>
 </div>
