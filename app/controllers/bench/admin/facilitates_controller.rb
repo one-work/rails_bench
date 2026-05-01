@@ -46,6 +46,7 @@ module Bench
         :name,
         :description,
         :price,
+        :unit,
         :advance_price,
         :logo,
         :facilitate_taxon_id
