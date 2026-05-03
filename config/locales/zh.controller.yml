@@ -127,6 +127,10 @@ zh:
       facilitatings:
         index:
           title: 服务
+      item:
+        facilitatings:
+          index:
+            title: 服务
     org:
       title: 工作管理
       facilitate_providers:
