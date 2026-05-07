@@ -1,23 +1,23 @@
-<dl id="facilitating_<%= facilitating.id %>" class="as-show">
+<dl id="facilitating_<%= model.id %>" class="as-show">
   <div>
     <dt><%= Bench::Facilitating.human_attribute_name(:member_id) %></dt>
     <dd>
-      <span><%= facilitating.member&.name %></span>
+      <span><%= model.member&.name %></span>
     </dd>
   </div>
   <div>
     <dt><%= Bench::Facilitating.human_attribute_name(:start_at) %></dt>
     <dd>
-      <time data-controller="time"><%= facilitating.start_at&.to_fs(:iso8601) %></time>
+      <time data-controller="time"><%= model.start_at&.to_fs(:iso8601) %></time>
     </dd>
   </div>
   <div>
     <dt><%= Bench::Facilitating.human_attribute_name(:finish_at) %></dt>
     <dd>
-      <time data-controller="time"><%= facilitating.finish_at&.to_fs(:iso8601) %></time>
+      <time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time>
     </dd>
   </div>
-  <% facilitating.extra.each do |k, v| %>
+  <% model.extra.each do |k, v| %>
     <div>
       <dt><%= Bench::Facilitating.human_attribute_name("extra/#{k}") %></dt>
       <dd><%= v %></dd>

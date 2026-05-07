@@ -1,7 +1,7 @@
 <div class="box is-padding-less">
 <% if @facilitatings.size == 1 %>
-  <%= render partial: 'facilitate', locals: { facilitating: @facilitatings.first } %>
+  <%= render partial: 'show_table', locals: { model: @facilitatings.first } %>
 <% else %>
-  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @facilitatings, as: :facilitating %>
+  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @facilitatings, as: :model %>
 <% end %>
 </div>
