@@ -6,6 +6,12 @@
     </dd>
   </div>
   <div>
+    <dt><%= Bench::Facilitating.human_attribute_name(:estimate_start_at) %></dt>
+    <dd>
+      <time data-controller="time"><%= model.estimate_start_at&.to_fs(:iso8601) %></time>
+    </dd>
+  </div>
+  <div>
     <dt><%= Bench::Facilitating.human_attribute_name(:start_at) %></dt>
     <dd>
       <time data-controller="time"><%= model.start_at&.to_fs(:iso8601) %></time>
