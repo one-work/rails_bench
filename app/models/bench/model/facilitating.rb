@@ -5,6 +5,7 @@ module Bench
     included do
       attribute :start_at, :datetime
       attribute :finish_at, :datetime
+      attribute :estimate_start_at, :datetime
       attribute :estimate_finish_at, :datetime
       attribute :extra, :json, default: {}
 
