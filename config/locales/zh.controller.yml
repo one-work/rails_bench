@@ -131,6 +131,8 @@ zh:
         facilitatings:
           index:
             title: 服务
+          edit:
+            title: 预约
     org:
       title: 工作管理
       facilitate_providers:
