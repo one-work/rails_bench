@@ -41,11 +41,20 @@ module Bench
     end
 
     def enter_url
-      Rails.app.routes.url_for(controller: 'bench/facilitatings', action: 'qrcode', id: self.id, host: item.organ.host)
+      Rails.app.routes.url_for(
+        controller: 'bench/facilitatings',
+        action: 'qrcode',
+        id: self.id,
+        host: item.organ.host
+      )
     end
 
     def qrcode_enter_png
-      QrcodeUtil.code_png(enter_url, border_modules: 0, fill: 'pink')
+      QrcodeUtil.code_png(
+        enter_url,
+        border_modules: 0,
+        fill: 'pink'
+      )
     end
 
     def qrcode_enter_url
