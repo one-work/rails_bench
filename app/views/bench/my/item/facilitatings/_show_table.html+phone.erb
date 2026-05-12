@@ -1,13 +1,13 @@
 <p class="text-centered py-2">
   <strong><%= model.item.good_name %></strong>
 </p>
-<div class="text-centered">
 <% if model.start_at.blank? || model.finish_at.blank? %>
+<div>
   <figure class="image">
     <%= image_tag model.qrcode_enter_url %>
     <figcaption class="text-centered">出示二维码核销</figcaption>
   </figure>
-<% end %>
 </div>
+<% end %>
 <%= render partial: 'facilitating_preview', locals: { model: model } %>
 <%= turbo_stream_from model %>
