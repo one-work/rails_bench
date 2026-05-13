@@ -3,5 +3,7 @@
 <%= f.number_field :advance_price %>
 <%= f.text_field :unit %>
 <%= render 'com/attachments/list_field', target: f.object.logo, f: f %>
+<%= render 'com/attachments/list_field', target: f.object.covers, f: f %>
+<%= render 'com/attachments/list_field', target: f.object.images, f: f %>
 <%= f.collection_select :facilitate_taxon_id, @facilitate_taxons, :id, :name if @facilitate_taxons.present? %>
 <%= f.text_area :description %>

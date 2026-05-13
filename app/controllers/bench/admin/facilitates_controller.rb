@@ -49,7 +49,9 @@ module Bench
         :unit,
         :advance_price,
         :logo,
-        :facilitate_taxon_id
+        :facilitate_taxon_id,
+        covers: [],
+        images: []
       )
       p.merge! default_params
     end
