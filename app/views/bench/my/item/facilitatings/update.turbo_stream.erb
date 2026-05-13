@@ -1,0 +1,2 @@
+<%= turbo_stream.replace "facilitating_#{@facilitating.id}", partial: 'facilitating_preview', locals: { model: @facilitating } %>
+<%= turbo_stream.remove 'modal_form' %>
