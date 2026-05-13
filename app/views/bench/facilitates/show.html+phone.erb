@@ -4,10 +4,11 @@
 </div>
 <% end %>
 
-<dl class="box as-show">
+<div class="box">
   <div>
-    <dt><%= Bench::Facilitate.human_attribute_name(:price) %></dt>
-    <dd><%= @facilitate.price.to_money.format.html_safe %></dd>
+    <strong class="size-5 text-danger"><%= @facilitate.price.to_money.format.html_safe %></strong>
+    <span>/</span>
+    <span><%= @facilitate.unit %></span>
   </div>
   <% if @facilitate.advance_price > 0 %>
     <div>
@@ -19,7 +20,7 @@
     <dt></dt>
     <dd><%= simple_format @facilitate.description %></dd>
   </div>
-</dl>
+</div>
 
 <div>
 <% @facilitate.images.each do |image| %>
