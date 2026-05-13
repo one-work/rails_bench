@@ -1,16 +1,11 @@
 <div class="has-block-space-around background-grey-lighter is-safe-bottom m-0 py-3" style="z-index: 500">
   <div
+    data-controller="mask"
+    data-action="click->mask#toggle"
     class="button is-small is-light is-radius"
-    data-controller="mask wx-share"
-    data-mask-id-value="mask"
-    data-wx-share-title-value="<%= @facilitate.name %>"
-    data-wx-share-desc-value="<%= @facilitate.description %>"
-    data-wx-share-link-value="<%= url_for(controller: '/bench/facilitates', action: 'show', id: @facilitate.id, only_path: false) %>"
-    data-wx-share-image-value="<%= @facilitate.logo.url %>"
-    data-action="click->mask#show click->wx-share#ready"
   >
     <%= image_tag 'wx_moment.svg', class: 'image is-16x16' %>
-    <span class="pl-1">分享</span>
+    <span>分享</span>
   </div>
   <%= link_to current_organ.service_url, rel: 'nofollow', class: 'button is-small is-outline is-primary' do %>
     <i class="fa-solid fa-headset"></i>
@@ -27,12 +22,4 @@
     <% end %>
   </div>
   <% end %>
-</div>
-<div
-  data-controller="mask"
-  data-action="click->mask#close"
-  class="weui-mask-share"
-  id="mask"
-  style="display: none"
->
 </div>
