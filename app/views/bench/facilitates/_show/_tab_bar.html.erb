@@ -1,16 +1,4 @@
 <div class="buttons as-bottom">
-  <div
-    data-controller="mask"
-    data-action="click->mask#toggle"
-    class="button is-light is-radius"
-  >
-    <%= image_tag 'wx_moment.svg', class: 'image is-16x16' %>
-    <span class="ml-1">分享</span>
-  </div>
-  <%= link_to current_organ.service_url, rel: 'nofollow', class: 'button is-outline is-primary' do %>
-    <%= svg_tag 'headset' %>
-    <span>联系客服</span>
-  <% end if current_organ.service_url.present? %>
   <% if @cart %>
   <div class="flex column-gap-1">
     <%= render partial: 'cart_item', locals: { item: @cart.init_cart_item(params, good_id: @facilitate.id), cart: @cart, item_con: 'trade/my/items' } %>
