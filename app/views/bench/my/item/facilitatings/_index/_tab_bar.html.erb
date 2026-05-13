@@ -1,11 +1,11 @@
 <div class="buttons as-bottom">
 <% if @facilitating %>
   <%= button_to({ action: 'edit', id: @facilitating.id }, class: 'button') do %>
-    <%= svg_tag 'pencil' %>
+    <%= svg_tag 'calendar-check' %>
     <span><%= t('.edit.title') %></span>
   <% end %>
   <%= button_to({ controller: 'ship/my/item/addresses', item_id: @facilitating.item_id }, class: 'button') do %>
-    <%= svg_tag 'pencil' %>
+    <%= svg_tag 'location-dot' %>
     <span><%= t('ship.my.item.addresses.index.title') %></span>
   <% end %>
 <% end %>
