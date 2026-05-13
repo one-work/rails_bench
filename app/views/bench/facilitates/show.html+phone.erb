@@ -21,8 +21,14 @@
   </div>
 </dl>
 
+<div>
+<% @facilitate.images.each do |image| %>
+  <%= image_tag image.url %>
+<% end %>
+</div>
+
 <% if @facilitate.facilitators.present? %>
-<div class="box is-padding-less">
+<div class="box is-padding-less mt-3">
   <div class="box-header">服务人员</div>
   <div class="p-3">
     <%= render partial: 'facilitator', collection: @facilitate.facilitators, as: :model %>
