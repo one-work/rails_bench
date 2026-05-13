@@ -3,8 +3,8 @@
     <%= svg_tag 'pencil' %>
     <span><%= t('.edit.title') %></span>
   <% end %>
-  <%= button_to({ controller: 'trade/my/items', action: 'edit_address', id: @facilitating.item_id }, class: 'button') do %>
+  <%= button_to({ controller: 'ship/my/item/addresses', item_id: @facilitating.item_id }, class: 'button') do %>
     <%= svg_tag 'pencil' %>
-    <span><%= t('trade.my.items.edit_address.title') %></span>
+    <span><%= t('ship.my.item.addresses.index.title') %></span>
   <% end %>
 </div>
