@@ -5,6 +5,7 @@ module Bench
 
     def index
       @facilitatings = @item.facilitatings
+      @facilitating = @facilitatings.first
     end
 
     private
