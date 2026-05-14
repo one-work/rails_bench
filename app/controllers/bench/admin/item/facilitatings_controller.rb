@@ -20,7 +20,10 @@ module Bench
 
     def facilitating_params
       params.fetch(:facilitating, {}).permit(
+        :facilitator_id,
         :estimate_start_at,
+        :start_at,
+        :finish_at,
         extra: {}
       )
     end
