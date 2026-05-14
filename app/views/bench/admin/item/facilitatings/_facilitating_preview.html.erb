@@ -1,0 +1,32 @@
+<dl id="facilitating_<%= model.id %>" class="as-show as-boxed">
+  <div>
+    <dt><%= Bench::Facilitating.human_attribute_name(:member_id) %></dt>
+    <dd>
+      <span><%= model.member&.name %></span>
+    </dd>
+  </div>
+  <div>
+    <dt><%= Bench::Facilitating.human_attribute_name(:estimate_start_at) %></dt>
+    <dd>
+      <time data-controller="time"><%= model.estimate_start_at&.to_fs(:iso8601) %></time>
+    </dd>
+  </div>
+  <div>
+    <dt><%= Bench::Facilitating.human_attribute_name(:start_at) %></dt>
+    <dd>
+      <time data-controller="time"><%= model.start_at&.to_fs(:iso8601) %></time>
+    </dd>
+  </div>
+  <div>
+    <dt><%= Bench::Facilitating.human_attribute_name(:finish_at) %></dt>
+    <dd>
+      <time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time>
+    </dd>
+  </div>
+  <% model.extra.each do |k, v| %>
+    <div>
+      <dt><%= Bench::Facilitating.human_attribute_name("extra/#{k}") %></dt>
+      <dd><%= v %></dd>
+    </div>
+  <% end %>
+</dl>
