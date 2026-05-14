@@ -96,6 +96,9 @@ Rails.application.routes.draw do
           get :all
         end
       end
+      resources :items, only: [] do
+        resources :facilitatings, controller: 'item/facilitatings'
+      end
       resources :project_stages
       resources :project_states
       resources :projects do
