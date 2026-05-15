@@ -72,6 +72,7 @@ Rails.application.routes.draw do
     namespace :my, defaults: { namespace: 'my' } do
       resources :facilitatings do
         member do
+          get :qrcode
           patch :confirm
         end
       end
