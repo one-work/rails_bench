@@ -1,0 +1,37 @@
+<div>
+  <dt><%= Bench::Facilitating.human_attribute_name(:facilitate_id) %></dt>
+  <dd><%= @facilitating.facilitate.name %></dd>
+</div>
+<div>
+  <dt><%= Bench::Facilitating.human_attribute_name(:item_id) %></dt>
+  <dd><%= @facilitating.item.uuid %></dd>
+</div>
+<div>
+  <dt><%= Bench::Facilitating.human_attribute_name(:member_id) %></dt>
+  <dd>
+    <div class="is-several">
+      <figure class="image is-rounded">
+        <%= image_tag @facilitating.facilitator.avatar, class: 'is-24x24' %>
+      </figure>
+      <span><%= @facilitating.facilitator.name %></span>
+    </div>
+  </dd>
+</div>
+<div>
+  <dt><%= Bench::Facilitating.human_attribute_name(:start_at) %></dt>
+  <dd class="text-success">
+    <time data-controller="time"><%= @facilitating.start_at&.to_fs(:iso8601) %></time>
+  </dd>
+</div>
+<div>
+  <dt><%= Bench::Facilitating.human_attribute_name(:finish_at) %></dt>
+  <dd class="text-danger">
+    <time data-controller="time"><%= @facilitating.finish_at&.to_fs(:iso8601) %></time>
+  </dd>
+</div>
+<% if @facilitating.start_at.present? && @facilitating.finish_at.present? %>
+<div>
+  <dt>时间</dt>
+  <dd><%= distance_time(@facilitating.start_at, @facilitating.finish_at) %></dd>
+</div>
+<% end %>

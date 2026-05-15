@@ -61,6 +61,19 @@ module Bench
       QrcodeUtil.data_url(enter_url)
     end
 
+    def user_url
+      Rails.app.routes.url_for(
+        controller: 'bench/facilitatings',
+        action: 'user',
+        id: self.id,
+        host: item.organ.host
+      )
+    end
+
+    def qrcode_user_url
+      QrcodeUtil.data_url(user_url)
+    end
+
     def send_notice
       broadcast_action_to(
         self,

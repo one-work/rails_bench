@@ -1,5 +1,6 @@
 module Bench
   class My::FacilitatingsController < My::BaseController
+    before_action :set_facilitating, only: [:qrcode]
     before_action :set_new_facilitating, only: [:new, :create]
     before_action :set_new_order, only: [:index]
 
@@ -24,9 +25,17 @@ module Bench
       end
     end
 
+    def qrcode
+
+    end
+
     private
     def set_new_facilitating
       @facilitating = current_user.facilitatings.build(facilitating_params)
+    end
+
+    def set_facilitating
+      @facilitating = current_user.facilitatings.find(params[:id])
     end
 
     def facilitating_params
