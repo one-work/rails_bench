@@ -1,11 +1,33 @@
 module Bench
   class FacilitatingsController < BaseController
     before_action :require_user
-    before_action :set_facilitating, only: [:qrcode]
+    before_action :set_facilitating, only: [:qrcode, :user]
 
     def qrcode
       if current_user.organ_ids.include?(@facilitating.facilitate.organ_id)
-        redirect_to({ controller: 'bench/me/facilitatings', action: 'qrcode', id: params[:id], host: @facilitating.facilitate.organ.host }, allow_other_host: true)
+        redirect_to(
+          {
+            controller: 'bench/me/facilitatings',
+            action: 'qrcode',
+            id: params[:id],
+            host: @facilitating.facilitate.organ.host
+          },
+          allow_other_host: true
+        )
+      end
+    end
+
+    def user
+      if [current_user.id, nil].include? @facilitating.user_id
+        redirect_to(
+          {
+            controller: 'bench/my/facilitatings',
+            action: 'qrcode',
+            id: params[:id],
+            host: @facilitating.facilitate.organ.host
+          },
+          allow_other_host: true
+        )
       end
     end
 

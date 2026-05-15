@@ -44,6 +44,7 @@ Rails.application.routes.draw do
     resources :facilitatings do
       member do
         get :qrcode
+        get :user
       end
     end
 
@@ -69,7 +70,12 @@ Rails.application.routes.draw do
     end
 
     namespace :my, defaults: { namespace: 'my' } do
-      resources :facilitatings
+      resources :facilitatings do
+        member do
+          get :qrcode
+          patch :confirm
+        end
+      end
       resources :items, only: [] do
         resources :facilitatings, controller: 'item/facilitatings'
       end
@@ -95,6 +101,9 @@ Rails.application.routes.draw do
         collection do
           get :all
         end
+      end
+      resources :items, only: [] do
+        resources :facilitatings, controller: 'item/facilitatings'
       end
       resources :project_stages
       resources :project_states

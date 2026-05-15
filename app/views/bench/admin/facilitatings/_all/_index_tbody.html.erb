@@ -18,6 +18,14 @@
   </dl>
 </td>
 <td>
+  <% if model.estimate_start_at %>
+    <p><time data-controller="time"><%= model.estimate_start_at.to_fs(:iso8601) %></time></p>
+  <% end %>
+  <% if model.estimate_finish_at %>
+    <p><time data-controller="time"><%= model.estimate_finish_at.to_fs(:iso8601) %></time></p>
+  <% end %>
+</td>
+<td>
   <% if model.start_at %>
     <p><time data-controller="time"><%= model.start_at.to_fs(:iso8601) %></time></p>
   <% end %>

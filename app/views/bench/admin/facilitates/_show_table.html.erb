@@ -19,6 +19,10 @@
   <dd><%= @facilitate.unit %></dd>
 </div>
 <div>
-  <dt><%= Bench::Facilitate.human_attribute_name(:created_at) %></dt>
-  <dd><time data-controller="time"><%= @facilitate.created_at.to_fs(:iso8601) %></time></dd>
+  <dt><%= Bench::Facilitate.human_attribute_name(:images) %></dt>
+  <dd>
+  <% @facilitate.images.each do |image| %>
+    <%= image_tag image.url, class: 'image is-64-w' %>
+  <% end %>
+  </dd>
 </div>

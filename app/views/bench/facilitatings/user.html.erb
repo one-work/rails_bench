@@ -1,0 +1,7 @@
+<div class="has-page-centered">
+  <p>您没有权限核销，请联系管理员！</p>
+  <%= link_to({ controller: 'bench/facilitates', host: @facilitating.facilitate.organ.host }, class: 'button is-medium mt-3') do %>
+    <%= svg_tag 'house' %>
+    <span>去下单</span>
+  <% end %>
+</div>

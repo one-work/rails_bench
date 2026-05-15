@@ -8,6 +8,7 @@ module Bench
       attribute :estimate_start_at, :datetime
       attribute :estimate_finish_at, :datetime
       attribute :extra, :json, default: {}
+      attribute :confirmed, :boolean
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
@@ -61,12 +62,25 @@ module Bench
       QrcodeUtil.data_url(enter_url)
     end
 
+    def user_url
+      Rails.app.routes.url_for(
+        controller: 'bench/facilitatings',
+        action: 'user',
+        id: self.id,
+        host: item.organ.host
+      )
+    end
+
+    def qrcode_user_url
+      QrcodeUtil.data_url(user_url)
+    end
+
     def send_notice
       broadcast_action_to(
         self,
         action: :update,
         target: "facilitating_#{id}",
-        partial: 'bench/my/facilitatings/_index/facilitating_preview',
+        partial: 'bench/my/facilitatings/facilitating_preview',
         locals: { model: self }
       )
     end

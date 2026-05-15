@@ -1,3 +1,8 @@
 <dl class="box as-show">
   <%= render 'facilitating' %>
 </dl>
+
+<div>
+  <%= image_tag @facilitating.qrcode_user_url, class: 'image mx-auto' %>
+  <p class="text-centered">邀请用户扫码确认</p>
+</div>
