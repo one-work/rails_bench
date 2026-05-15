@@ -69,7 +69,11 @@ Rails.application.routes.draw do
     end
 
     namespace :my, defaults: { namespace: 'my' } do
-      resources :facilitatings
+      resources :facilitatings do
+        member do
+          patch :confirm
+        end
+      end
       resources :items, only: [] do
         resources :facilitatings, controller: 'item/facilitatings'
       end

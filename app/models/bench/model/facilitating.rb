@@ -8,6 +8,7 @@ module Bench
       attribute :estimate_start_at, :datetime
       attribute :estimate_finish_at, :datetime
       attribute :extra, :json, default: {}
+      attribute :confirmed, :boolean
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 

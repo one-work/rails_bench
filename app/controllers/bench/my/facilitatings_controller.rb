@@ -1,6 +1,6 @@
 module Bench
   class My::FacilitatingsController < My::BaseController
-    before_action :set_facilitating, only: [:qrcode]
+    before_action :set_facilitating, only: [:qrcode, :confirm]
     before_action :set_new_facilitating, only: [:new, :create]
     before_action :set_new_order, only: [:index]
 
@@ -26,7 +26,12 @@ module Bench
     end
 
     def qrcode
+    end
 
+    def confirm
+      @facilitating.confirmed = true
+      @facilitating.user = current_user
+      @facilitating.save
     end
 
     private
@@ -35,7 +40,7 @@ module Bench
     end
 
     def set_facilitating
-      @facilitating = current_user.facilitatings.find(params[:id])
+      @facilitating = Facilitating.find(params[:id])
     end
 
     def facilitating_params
