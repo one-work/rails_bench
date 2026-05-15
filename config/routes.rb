@@ -44,6 +44,7 @@ Rails.application.routes.draw do
     resources :facilitatings do
       member do
         get :qrcode
+        get :user
       end
     end
 
