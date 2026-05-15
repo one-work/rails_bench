@@ -66,7 +66,7 @@ module Bench
         self,
         action: :update,
         target: "facilitating_#{id}",
-        partial: 'bench/my/facilitatings/_index/facilitating_preview',
+        partial: 'bench/my/facilitatings/facilitating_preview',
         locals: { model: self }
       )
     end
