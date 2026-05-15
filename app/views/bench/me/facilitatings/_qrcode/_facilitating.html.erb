@@ -35,3 +35,7 @@
   <dd><%= distance_time(@facilitating.start_at, @facilitating.finish_at) %></dd>
 </div>
 <% end %>
+<div>
+  <dt><%= Bench::Facilitating.human_attribute_name(:confirmed) %></dt>
+  <dd><%= @facilitating.confirmed_i18n %></dd>
+</div>

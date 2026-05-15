@@ -122,11 +122,13 @@ zh:
         index:
           title: 待服务
         qrcode:
-          title: 服务二维码
+          title: 服务详情
     my:
       facilitatings:
         index:
           title: 服务
+        qrcode:
+          title: 服务详情
       item:
         facilitatings:
           index:

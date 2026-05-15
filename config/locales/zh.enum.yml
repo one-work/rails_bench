@@ -11,3 +11,7 @@ zh:
           todo: 接下来
           doing: 进行中
           done: 完成的
+      bench/facilitating:
+        confirmed:
+          false: 待确认
+          true: 已确认

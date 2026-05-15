@@ -16,6 +16,7 @@ zh:
         estimate_finish_at: 预计完成时间
         start_at: 开始时间
         finish_at: 完成时间
+        confirmed: 用户确认
       bench/facilitate_provider:
         selected: 中标
         provider_id: 服务商
