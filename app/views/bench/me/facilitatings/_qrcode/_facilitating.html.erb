@@ -10,8 +10,8 @@
   <dt><%= Bench::Facilitating.human_attribute_name(:member_id) %></dt>
   <dd>
     <div class="is-several">
-      <figure class="image is-rounded is-32x32">
-        <%= image_tag @facilitating.facilitator.avatar %>
+      <figure class="image is-rounded">
+        <%= image_tag @facilitating.facilitator.avatar, class: 'is-24x24' %>
       </figure>
       <span><%= @facilitating.facilitator.name %></span>
     </div>
