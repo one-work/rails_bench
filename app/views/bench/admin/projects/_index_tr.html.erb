@@ -1,0 +1,10 @@
+<%=
+  tr_tag(
+    model,
+    {
+      href: url_for(controller: 'tasks', action: 'project', project_id: model.id),
+      icon: 'list-check',
+      title: t('.tasks.project.title')
+    }
+  ) { yield }
+%>

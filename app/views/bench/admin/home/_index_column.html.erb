@@ -1,4 +1,5 @@
 <div class="fixed-grid has-6-cols">
+  <p class="size-7 text-grey">项目</p>
   <div class="grid">
     <%= link_to({ controller: 'bench/admin/projects' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
       <span><%= t('bench.admin.projects.index.title') %></span>
@@ -10,6 +11,7 @@
       <span><%= t('bench.admin.facilitatings.index.title') %></span>
     <% end %>
   </div>
+  <p class="size-7 text-grey">标准化服务</p>
   <div class="grid">
     <%= link_to({ controller: 'bench/admin/facilitates' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
       <span><%= t('bench.admin.facilitates.index.title') %></span>
@@ -18,4 +20,8 @@
       <span><%= t('bench.admin.facilitate_taxons.index.title') %></span>
     <% end %>
   </div>
+  <p class="size-7 text-grey">上下游</p>
+  <%= link_to({ controller: 'bench/admin/provides' }, data: { turbo_frame: 'panel', action: 'menu-popup#enter' }, class: 'cell button is-fullwidth') do %>
+    <span><%= t('bench.admin.provides.index.title') %></span>
+  <% end %>
 </div>

@@ -43,6 +43,9 @@ zh:
           title: 项目库
         show:
           title: 项目详情
+      provides:
+        index:
+          title: 服务商
       fund_expenses:
         index:
           title: 资金使用
