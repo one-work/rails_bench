@@ -16,10 +16,8 @@ module Bench
       belongs_to :standard, optional: true
       belongs_to :facilitate_taxon, counter_cache: true, optional: true
 
-      has_one :facilitate_provider, -> { where(selected: true) }
-      has_one :provider, through: :facilitate_provider
-      has_many :facilitate_providers, dependent: :destroy
-      has_many :providers, through: :facilitate_providers
+      has_many :facilitate_provides, dependent: :destroy
+      has_many :providers, through: :facilitate_provides
       has_many :facilitate_indicators, dependent: :destroy
       has_many :indicators, through: :facilitate_indicators
       has_many :facilitatings

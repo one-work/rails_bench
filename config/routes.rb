@@ -105,7 +105,7 @@ Rails.application.routes.draw do
         end
         resources :facilitators
         resources :facilitate_indicators
-        resources :facilitate_providers
+        resources :facilitate_provides
       end
       resources :facilitatings do
         collection do
