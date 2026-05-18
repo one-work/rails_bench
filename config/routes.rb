@@ -122,6 +122,7 @@ Rails.application.routes.draw do
         resources :project_indicators
         resources :project_mileposts, except: [:index, :show]
       end
+      resources :provides
       resources :tasks do
         collection do
           get 'project/:project_id' => :project
