@@ -9,11 +9,11 @@ module Bench
 
     private
     def set_new_provide
-      @provide = current_organ.provides.build(provide_params)
+      @provide = Provide.new(provide_params)
     end
 
     def set_provide
-      @provide = current_organ.provides.find params[:id]
+      @provide = Provide.find params[:id]
     end
 
     def provide_params

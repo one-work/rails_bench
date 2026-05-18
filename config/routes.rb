@@ -48,6 +48,16 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :board, defaults: { namespace: 'board' } do
+      scope ':invite_token' do
+        resources :organs do
+          member do
+            patch :bind
+          end
+        end
+      end
+    end
+
     namespace :me, defaults: { namespace: 'me' } do
       resources :tasks do
         concerns :tasked
@@ -122,7 +132,11 @@ Rails.application.routes.draw do
         resources :project_indicators
         resources :project_mileposts, except: [:index, :show]
       end
-      resources :provides
+      resources :provides do
+        member do
+          match :invite, via: [:get, :post]
+        end
+      end
       resources :tasks do
         collection do
           get 'project/:project_id' => :project
