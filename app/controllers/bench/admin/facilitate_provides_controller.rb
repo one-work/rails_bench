@@ -3,6 +3,7 @@ module Bench
     before_action :set_facilitate
     before_action :set_facilitate_provide, only: [:show, :task_templates, :edit, :update, :destroy]
     before_action :set_new_facilitate_provide, only: [:new, :create]
+    before_action :set_provides, only: [:new, :create, :edit, :update]
 
     def index
       @facilitate_provides = @facilitate.facilitate_provides.page(params[:page])
@@ -22,12 +23,17 @@ module Bench
     end
 
     def set_facilitate_provide
-      @facilitate_provide = FacilitateProvider.find(params[:id])
+      @facilitate_provide = FacilitateProvide.find(params[:id])
+    end
+
+    def set_provides
+      @provides = Provide.where(default_params)
     end
 
     def facilitate_provide_params
       params.fetch(:facilitate_provide, {}).permit(
-        :selected,
+        :provide_id,
+        :default,
         :note
       )
     end
