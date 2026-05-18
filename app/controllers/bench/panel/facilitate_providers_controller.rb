@@ -27,7 +27,6 @@ module Bench
       @facilitate = Facilitate.find params[:facilitate_id]
     end
 
-
     def set_facilitate_provider
       @facilitate_provider = FacilitateProvider.find(params[:id])
     end
