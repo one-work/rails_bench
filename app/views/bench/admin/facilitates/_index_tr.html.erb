@@ -1,8 +1,20 @@
 <%=
   tr_tag(
     model,
-    { href: url_for(controller: 'facilitate_indicators', facilitate_id: model.id), icon: 'face-smile-beam', title: t('.facilitate_indicators.index.title') },
-    { href: url_for(controller: 'facilitate_providers', facilitate_id: model.id), icon: 'user-magnifying-glass', title: t('.facilitate_providers.index.title') },
-    { href: url_for(controller: 'facilitators', facilitate_id: model.id), icon: 'user-tie', title: t('.facilitators.index.title') }
+    {
+      href: url_for(controller: 'facilitate_indicators', facilitate_id: model.id),
+      icon: 'face-smile-beam',
+      title: t('.facilitate_indicators.index.title')
+    },
+    {
+      href: url_for(controller: 'facilitate_providers', facilitate_id: model.id),
+      icon: 'user-magnifying-glass',
+      title: t('.facilitate_providers.index.title')
+    },
+    {
+      href: url_for(controller: 'facilitators', facilitate_id: model.id),
+      icon: 'user-tie',
+      title: t('.facilitators.index.title')
+    }
   ) { yield }
 %>
