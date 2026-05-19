@@ -1,5 +1,5 @@
 module Bench
-  class Org::FacilitatesController < Panel::BaseController
+  class Org::FacilitatingsController < Panel::BaseController
     before_action :set_facilitate, only: [:show, :edit, :update, :destroy]
 
     def index
