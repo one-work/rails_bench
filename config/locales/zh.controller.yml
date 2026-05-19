@@ -9,6 +9,10 @@ zh:
     facilitates:
       index:
         title: 服务
+    board:
+      organs:
+        bind:
+          title: 绑定
     admin:
       title: 工作管理
       home:
