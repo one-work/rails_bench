@@ -1,1 +1,1 @@
-<%= f.select :facilitate_taxon_id, options_from_collection_for_select(@facilitate_taxons, :id, :name, @facilitate.facilitate_taxon_id), include_blank: true %>
+<%= f.collection_select :facilitator_id, @facilitators, :id, :name %>
