@@ -189,14 +189,12 @@ Rails.application.routes.draw do
         resources :projects
       end
       resources :indicators
-      resources :standards do
-        resources :standard_providers
-      end
     end
 
     namespace :out, defaults: { namespace: 'out' } do
       resources :facilitate_provides do
         resources :facilitatings
+        resources :facilitators
       end
     end
   end
