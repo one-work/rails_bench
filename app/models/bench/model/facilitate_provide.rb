@@ -6,6 +6,7 @@ module Bench
       attribute :note, :string
       attribute :default, :boolean
       attribute :facilitatings_count, :integer, default: 0
+      attribute :facilitators_count, :integer, default: 0
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :provider, class_name: 'Org::Organ', optional: true

@@ -10,6 +10,8 @@ module Bench
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :member, class_name: 'Org::Member'
 
+      belongs_to :facilitate_provide, foreign_key: [:facilitate_id, :organ_id], primary_key: [:facilitate_id, :provider_id], counter_cache: true, optional: true
+
       has_one_attached :avatar
 
       before_validation :sync_organ_from_member

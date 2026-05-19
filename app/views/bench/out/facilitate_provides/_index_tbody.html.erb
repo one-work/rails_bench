@@ -1,3 +1,4 @@
 <td><%= model.organ.name %></td>
 <td><%= model.facilitate.name %></td>
 <td><%= link_to model.facilitatings_count, { controller: 'facilitatings', facilitate_provide_id: model.id } %></td>
+<td><%= link_to model.facilitators_count, { controller: 'facilitators', facilitate_provide_id: model.id } %></td>
