@@ -4,7 +4,7 @@
   <% end %>
   <div class="media-right">
     <% if @provide.provider_id == model.organ_id %>
-      <span>已绑定</span>
+      <div class="button is-borderless">已绑定</div>
     <% else %>
       <%= button_to({ action: 'bind', id: model.organ_id }, method: :patch, class: 'button is-small is-link') do %>
         <%= svg_tag 'handshake' %>

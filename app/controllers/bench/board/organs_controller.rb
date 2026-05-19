@@ -22,6 +22,7 @@ module Bench
 
     def bind
       @provide.update provider_id: @organ.id
+      @members = current_user.members.includes(:organ).order(id: :asc)
     end
 
     private
