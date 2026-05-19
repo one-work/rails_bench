@@ -1,4 +1,5 @@
-<%= f.collection_select :facilitator_id, @facilitators, :id, :name %>
+<%= f.collection_select :provide_id, @provides, :id, :name %>
+<%= f.collection_select :facilitator_id, @facilitators, :id, :name, include_blank: true %>
 <%= f.datetime_field :estimate_start_at %>
 <%= f.datetime_field :estimate_finish_at %>
 <%= f.datetime_field :start_at %>

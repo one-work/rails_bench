@@ -12,13 +12,14 @@ module Bench
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
-      belongs_to :facilitate
-      belongs_to :facilitator, optional: true
-
       belongs_to :user, class_name: 'Auth::User', optional: true
       belongs_to :member, class_name: 'Org::Member', optional: true
       belongs_to :wallet_payment, class_name: 'Trade::WalletPayment', optional: true
       belongs_to :item, class_name: 'Trade::Item', optional: true
+
+      belongs_to :facilitate
+      belongs_to :facilitator, optional: true
+      belongs_to :provide, optional: true
 
       before_validation :sync_from_facilitate, if: -> { facilitate_id_changed? }
       before_validation :sync_from_facilitator, if: -> { facilitator_id_changed? }

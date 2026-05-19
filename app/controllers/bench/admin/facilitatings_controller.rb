@@ -1,6 +1,7 @@
 module Bench
   class Admin::FacilitatingsController < Admin::BaseController
     before_action :set_facilitators, only: [:new, :create, :edit, :update]
+    before_action :set_provides, only: [:new, :create, :edit, :update]
 
     def index
       q_params = {}
@@ -21,9 +22,14 @@ module Bench
       @facilitators = Facilitator.where(default_params)
     end
 
+    def set_provides
+      @provides = Provide.where(default_params)
+    end
+
     def facilitating_params
       params.fetch(:facilitating, {}).permit(
         :facilitator_id,
+        :provide_id,
         :start_at,
         :finish_at
       )
