@@ -8,8 +8,12 @@
    </span>
 </td>
 <td>
-  <p><time data-controller="time"><%= model.estimate_start_at.to_fs(:iso8601) %></time></p>
-  <p><time data-controller="time"><%= model.estimate_finish_at.to_fs(:iso8601) %></time></p>
+  <% if model.estimate_start_at.present? %>
+    <p><time data-controller="time"><%= model.estimate_start_at.to_fs(:iso8601) %></time></p>
+  <% end %>
+  <% if model.estimate_finish_at.present? %>
+    <p><time data-controller="time"><%= model.estimate_finish_at.to_fs(:iso8601) %></time></p>
+  <% end %>
 </td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
 <td><%= model.facilitate.price %></td>
