@@ -1,0 +1,15 @@
+<td>
+  <%= image_tag model.facilitate.logo, size: 'image is-32' if model.facilitate.logo.attached? %>
+  <span><%= model.facilitate.name %></span>
+</td>
+<td>
+   <span class="tag">
+     <%# link_to model.facilitate_taxon.name, { action: 'index', facilitate_taxon_id: model.facilitate_taxon_id } %>
+   </span>
+</td>
+<td>
+  <p><time data-controller="time"><%= model.estimate_start_at.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.estimate_finish_at.to_fs(:iso8601) %></time></p>
+</td>
+<td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
+<td><%= model.facilitate.price %></td>
