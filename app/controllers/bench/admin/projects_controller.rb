@@ -17,10 +17,6 @@ module Bench
       @projects = Project.includes(:taxon, :project_mileposts).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
-    def new
-      @project = Project.new(taxon_id: params[:taxon_id])
-    end
-
     def repos
       @repos = @project.creator&.github_repos
       render json: { results: @repos }
@@ -45,7 +41,8 @@ module Bench
     end
 
     def set_new_project
-      @project = @taxon.projects.build(project_params)
+      @project = Project.new(taxon_id: params[:taxon_id])
+      #@project = @taxon.projects.build(project_params)
     end
 
     def prepare_form
