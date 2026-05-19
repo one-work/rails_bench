@@ -18,10 +18,16 @@ module Bench
     end
 
     def invite_url
+      if organ.provider
+        host = organ.provider.host
+      else
+        host = Rails.app.routes.default_url_options[:host]
+      end
+
       Rails.app.routes.url_for(
         controller: 'bench/board/organs',
         invite_token: invite_token,
-        host: (organ.provider || organ).host
+        host: host
       )
     end
 
