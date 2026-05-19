@@ -8,6 +8,8 @@ module Bench
       attribute :note, :string
       attribute :default, :boolean
 
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
+
       belongs_to :provide, counter_cache: true
       belongs_to :facilitate
 

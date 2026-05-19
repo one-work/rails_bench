@@ -3,7 +3,7 @@ module Bench
     before_action :set_facilitate, only: [:show, :edit, :update, :destroy]
 
     def index
-      @facilitate_provides = current_organ.facilitate_provides.includes(:organ, :facilitate).page(params[:page])
+      @facilitate_provides = current_organ.facilitate_provides.includes(:facilitate, :organ).page(params[:page])
     end
 
     private

@@ -31,11 +31,12 @@ module Bench
     end
 
     def facilitate_provide_params
-      params.fetch(:facilitate_provide, {}).permit(
+      _p = params.fetch(:facilitate_provide, {}).permit(
         :provide_id,
         :default,
         :note
       )
+      _p.merge! default_form_params
     end
 
     def task_template_params
