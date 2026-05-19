@@ -2,6 +2,7 @@ module Bench
   class Admin::FacilitatingsController < Admin::BaseController
     before_action :set_facilitators, only: [:new, :create, :edit, :update]
     before_action :set_provides, only: [:new, :create, :edit, :update]
+    before_action :set_filter_columns, only: [:index, :all]
 
     def index
       q_params = {}
