@@ -1,0 +1,5 @@
+<% if @members.present? %>
+  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @members, as: :model %>
+<% else %>
+  <%= render partial: 'member_new', locals: { roles: @roles } %>
+<% end %>
