@@ -15,6 +15,12 @@ module Bench
 
       validates :provider_id, uniqueness: { scope: :organ_id }, allow_blank: true
       validates :name, uniqueness: { scope: :organ_id }
+
+      after_save :sync_provider_to_facilitate_provides, if: -> { saved_change_to_provider_id? }
+    end
+
+    def sync_provider_to_facilitate_provides
+      facilitate_provides.update(provider_id: provider_id)
     end
 
     def invite_url
