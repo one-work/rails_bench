@@ -14,5 +14,3 @@ How to use my plugin.
 ## Contributing
 Contribution directions go here.
 
-## License
-遵循 [MIT](https://opensource.org/licenses/LGPL-3.0) 开源协议

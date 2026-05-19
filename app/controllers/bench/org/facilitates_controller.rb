@@ -6,7 +6,7 @@ module Bench
       q_params = {}
       q_params.merge! params.permit(:facilitate_taxon_id)
 
-      @facilitate_providers = FacilitateProvider.default_where(default_params).page(params[:page])
+      @facilitate_provides = FacilitateProvider.default_where(default_params).page(params[:page])
       @facilitates = Facilitate.default_where(q_params).page(params[:page])
     end
 
