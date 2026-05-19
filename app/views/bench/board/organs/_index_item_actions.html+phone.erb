@@ -1,0 +1,15 @@
+<div id="tr_<%= model.id %>" class="media">
+  <%= link_to({ controller: '/me/home', auth_token: Current.session.once_token, **model.admin_url_options(request) }, class: 'media-content') do %>
+    <%= yield %>
+  <% end %>
+  <div class="media-right">
+    <% if @provide.provider_id == model.id %>
+      <span>已绑定</span>
+    <% else %>
+      <%= button_to({ action: 'bind', id: model.id }, method: :patch, class: 'button is-small is-link') do %>
+        <%= svg_tag 'handshake' %>
+        <span><%= t('.bind.title') %></span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
