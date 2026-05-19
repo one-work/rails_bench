@@ -46,6 +46,8 @@ zh:
       provides:
         index:
           title: 服务商
+        invite:
+          title: 邀请服务商
       fund_expenses:
         index:
           title: 资金使用
