@@ -140,11 +140,11 @@ zh:
             title: 服务
           edit:
             title: 预约时间
-    org:
+    out:
       title: 工作管理
-      facilitate_providers:
+      facilitate_provides:
         index:
-          title: 投标
+          title: 中标
     panel:
       title: 工作台
       home:

@@ -1,5 +1,5 @@
 module Bench
-  class Org::FacilitatingsController < Panel::BaseController
+  class Out::FacilitatingsController < Out::BaseController
     before_action :set_facilitate_provide
     before_action :set_facilitating, only: [:show, :edit, :update, :destroy]
 
