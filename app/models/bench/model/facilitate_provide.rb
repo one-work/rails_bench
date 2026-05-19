@@ -10,6 +10,8 @@ module Bench
 
       belongs_to :provide, counter_cache: true
       belongs_to :facilitate
+
+      has_many :facilitatings, primary_key: [:facilitate_id, :provide_id], foreign_key: [:facilitate_id, :provide_id]
     end
 
   end

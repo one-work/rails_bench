@@ -195,8 +195,8 @@ Rails.application.routes.draw do
     end
 
     namespace :org, defaults: { namespace: 'org' } do
-      resources :facilitatings do
-        resources :facilitate_provides
+      resources :facilitate_provides do
+        resources :facilitatings
       end
     end
   end

@@ -1,29 +1,15 @@
 module Bench
   class Org::FacilitatingsController < Panel::BaseController
-    before_action :set_facilitate, only: [:show, :edit, :update, :destroy]
+    before_action :set_facilitate_provide
+    before_action :set_facilitating, only: [:show, :edit, :update, :destroy]
 
     def index
-      q_params = {}
-      q_params.merge! params.permit(:facilitate_taxon_id)
-
-      @facilitate_provides = FacilitateProvider.default_where(default_params).page(params[:page])
-      @facilitates = Facilitate.default_where(q_params).page(params[:page])
+      @facilitatings = @facilitate_provide.facilitatings.page(params[:page])
     end
 
     private
-    def set_facilitate
-      @facilitate = Facilitate.find(params[:id])
-    end
-
-    def facilitate_params
-      p = params.fetch(:facilitate, {}).permit(
-        :name,
-        :description,
-        :price,
-        :logo,
-        :facilitate_taxon_id
-      )
-      p.merge! default_form_params
+    def set_facilitate_provide
+      @facilitate_provide = FacilitateProvide.find(params[:facilitate_provide_id])
     end
 
   end
