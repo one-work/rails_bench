@@ -12,5 +12,9 @@ module Bench
       @facilitate_provide = FacilitateProvide.find(params[:facilitate_provide_id])
     end
 
+    def set_facilitating
+      @facilitating = @facilitate_provide.facilitatings.find(params[:id])
+    end
+
   end
 end
