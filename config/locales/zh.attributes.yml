@@ -85,3 +85,6 @@ zh:
       bench/task:
         estimated_time: 预估时间
         deadline_on: 截止日期
+      org/organ:
+        start_at: 营业开始时间
+        finish_at: 营业结束时间
