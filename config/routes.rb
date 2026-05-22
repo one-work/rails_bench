@@ -41,6 +41,7 @@ Rails.application.routes.draw do
       end
       resources :facilitators
     end
+    resources :facilitate_resells
     resources :facilitatings do
       member do
         get :qrcode
