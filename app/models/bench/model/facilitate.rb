@@ -23,6 +23,7 @@ module Bench
       has_many :facilitatings
       has_many :facilitators, dependent: :destroy
       has_many :members, through: :facilitators
+      has_many :facilitate_resells, dependent: :destroy
 
       has_one_attached :logo
       has_many_attached :covers

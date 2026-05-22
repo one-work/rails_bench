@@ -1,0 +1,9 @@
+<td><%= link_to model.facilitate.name, { controller: 'facilitates', action: 'show', id: model.facilitate_id } %></td>
+<td><%= model.provide.name %></td>
+<td><%= model.note %></td>
+<td>
+  <%= form_with theme: 'switch', model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :default, data: { action: 'input#submit' }, id: nil %>
+  <% end %>
+</td>
+<td><%= link_to '服务管理', { action: 'show', id: model.id } %></td>
