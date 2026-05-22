@@ -19,7 +19,7 @@ module Bench
     end
 
     def sync_seller
-      self.seller = provider.provider
+      self.seller = provide.provider
     end
 
   end
