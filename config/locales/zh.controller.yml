@@ -37,6 +37,9 @@ zh:
           title: 流程
         show:
           title: 服务详情
+      facilitate_resells:
+        index:
+          title: 渠道管理
       facilitatings:
         index:
           title: 待服务列表

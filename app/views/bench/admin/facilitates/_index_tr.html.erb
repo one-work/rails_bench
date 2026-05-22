@@ -12,6 +12,11 @@
       title: t('.facilitate_provides.index.title')
     },
     {
+      href: url_for(controller: 'facilitate_resells', facilitate_id: model.id),
+      icon: 'badge-percent',
+      title: t('.facilitate_resells.index.title')
+    },
+    {
       href: url_for(controller: 'facilitators', facilitate_id: model.id),
       icon: 'user-tie',
       title: t('.facilitators.index.title')

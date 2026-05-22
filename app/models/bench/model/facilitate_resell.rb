@@ -11,9 +11,15 @@ module Bench
       belongs_to :seller, class_name: 'Org::Organ', optional: true
 
       belongs_to :facilitate
-      belongs_to :provide, counter_cache: true
+      belongs_to :provide
 
       has_many :facilitatings, primary_key: [:facilitate_id, :provide_id], foreign_key: [:facilitate_id, :provide_id]
+
+      before_save :sync_seller, if: -> { provide_id_changed? }
+    end
+
+    def sync_seller
+      self.seller = provider.provider
     end
 
   end
