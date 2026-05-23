@@ -1,7 +1,9 @@
 <div class="media as-boxed">
+  <% if model.facilitate.logo.attached? %>
   <div class="media-left as-logo">
-    <%= image_tag model.facilitate.logo, class: 'image is-64x64' if model.logo.attached? %>
+    <%= image_tag model.facilitate.logo, class: 'image is-64x64' %>
   </div>
+  <% end %>
   <div class="media-content">
     <%= yield %>
   </div>
