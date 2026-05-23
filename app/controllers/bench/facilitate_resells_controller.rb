@@ -1,8 +1,7 @@
 module Bench
   class FacilitateResellsController < BaseController
     before_action :set_facilitate, only: [:show]
-    before_action :set_facilitate_taxons, only: [:index, :buy]
-    before_action :set_cart, only: [:index, :show, :buy]
+    before_action :set_cart, only: [:index, :show]
     before_action :require_user
 
     def index
