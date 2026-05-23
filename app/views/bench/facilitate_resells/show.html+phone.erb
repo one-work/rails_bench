@@ -1,38 +1,38 @@
-<% if @facilitate.covers.length > 0 %>
+<% if @facilitate_resell.facilitate.covers.length > 0 %>
 <div class="box">
-  <%= render partial: 'covers', locals: { model: @facilitate } %>
+  <%= render partial: 'covers', locals: { model: @facilitate_resell.facilitate } %>
 </div>
 <% end %>
 
 <div class="box">
   <div>
-    <strong class="size-5 text-danger"><%= @facilitate.price.to_money.format.html_safe %></strong>
+    <strong class="size-5 text-danger"><%= @facilitate_resell.price.to_money.format.html_safe %></strong>
     <span>/</span>
-    <span><%= @facilitate.unit %></span>
+    <span><%= @facilitate_resell.facilitate.unit %></span>
   </div>
-  <% if @facilitate.advance_price > 0 %>
+  <% if @facilitate_resell.advance_price > 0 %>
     <div>
-      <dt><%= Bench::Facilitate.human_attribute_name(:advance_price) %></dt>
-      <dd><%= @facilitate.advance_price.to_money.format.html_safe %></dd>
+      <dt><%= Bench::FacilitateResell.human_attribute_name(:advance_price) %></dt>
+      <dd><%= @facilitate_resell.advance_price.to_money.format.html_safe %></dd>
     </div>
   <% end %>
   <div>
     <dt></dt>
-    <dd><%= simple_format @facilitate.description %></dd>
+    <dd><%= simple_format @facilitate_resell.facilitate.description %></dd>
   </div>
 </div>
 
 <div>
-<% @facilitate.images.each do |image| %>
+<% @facilitate_resell.facilitate.images.each do |image| %>
   <%= image_tag image.url %>
 <% end %>
 </div>
 
-<% if @facilitate.facilitators.present? %>
+<% if @facilitate_resell.facilitate.facilitators.present? %>
 <div class="box is-padding-less mt-3">
   <div class="box-header">服务人员</div>
   <div class="p-3">
-    <%= render partial: 'facilitator', collection: @facilitate.facilitators, as: :model %>
+    <%= render partial: 'facilitator', collection: @facilitate_resell.facilitate.facilitators, as: :model %>
   </div>
 </div>
 <% end %>
