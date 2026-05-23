@@ -17,7 +17,7 @@ zh:
         start_at: 开始时间
         finish_at: 完成时间
         confirmed: 用户确认
-      bench/facilitate_provider:
+      bench/facilitate_provide:
         selected: 中标
         provider_id: 服务商
         price: 参考价格
@@ -68,6 +68,8 @@ zh:
       bench/project_taxon_facilitate:
         facilitate_taxon_id: 服务分类
         facilitate_id: 标准化服务
+      bench/provide:
+        provider_id: 服务商
       bench/taxon_indicator:
         weight: 权重
         facilitate_taxon_id: 服务分类
