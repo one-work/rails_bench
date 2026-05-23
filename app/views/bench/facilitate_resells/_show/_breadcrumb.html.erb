@@ -1,0 +1,5 @@
+<li><%= link_to t('bench.facilitates.index.title'), { controller: 'facilitates' } %></li>
+<% if @facilitate.facilitate_taxon %>
+  <li><%= link_to @facilitate.facilitate_taxon.name, { controller: 'facilitates', facilitate_taxon_id: @facilitate.facilitate_taxon_id } %></li>
+<% end %>
+<li class="is-active"><%= @facilitate.name %></li>

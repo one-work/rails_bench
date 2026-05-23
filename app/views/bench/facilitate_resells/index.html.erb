@@ -1,0 +1,11 @@
+<div class="column">
+  <%= render 'taxon' %>
+  <div class="cards is-4">
+    <%= render partial: 'card', collection: @facilitates, as: :model %>
+  </div>
+  <%= paginate @facilitates %>
+</div>
+
+<div class="column is-one-fifth">
+  <%= render partial: 'cart_nav', locals: { cart: @cart, cart_con: 'trade/my/carts', order_con: 'trade/my/orders' } if @cart %>
+</div>

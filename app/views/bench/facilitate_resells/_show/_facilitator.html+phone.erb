@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="media-left as-logo">
+    <%= image_tag model.avatar, class: 'image is-64x64' if model.avatar.attached? %>
+  </div>
+  <div class="media-content as-body">
+    <%= link_to({ controller: 'facilitators', action: 'show', facilitate_id: @facilitate.id, id: model.id }, class: '') do %>
+      <span class="text-link-dark"><%= model.name %></span>
+    <% end %>
+    <div class="text-grey"><%= model.description %></div>
+  </div>
+</div>

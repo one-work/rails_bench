@@ -10,12 +10,12 @@ module Bench
       q_params.merge! seller_id: current_organ.id
       q_params.merge! params.permit(:facilitate_taxon_id)
 
-      @facilitates = Facilitate.default_where(q_params).page(params[:page])
+      @facilitate_resells = FacilitateResell.default_where(q_params).page(params[:page])
     end
 
     private
     def set_facilitate_resell
-      @facilitate = Facilitate.find(params[:id])
+      @facilitate_resell = FacilitateResell.find(params[:id])
     end
 
     def set_cart
