@@ -201,10 +201,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resolve 'Bench::Facilitate' do |facilitate, options|
-    url_for(controller: '/bench/facilitates', action: 'show', id: facilitate, **options)
+  resolve 'Bench::Facilitate' do |model, options|
+    url_for(controller: '/bench/facilitates', action: 'show', id: model.id, **options)
   end
-  resolve 'Bench::Facilitating' do |facilitating, options|
-    url_for(controller: 'bench/my/facilitatings', action: 'show', id: facilitating, **options)
+  resolve 'Bench::FacilitateResell' do |model, options|
+    url_for(controller: '/bench/facilitate_resells', action: 'show', id: model.id, **options)
+  end
+  resolve 'Bench::Facilitating' do |model, options|
+    url_for(controller: 'bench/my/facilitatings', action: 'show', id: model.id, **options)
   end
 end
