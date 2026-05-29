@@ -20,7 +20,7 @@ module Bench
       belongs_to :facilitate
       belongs_to :facilitator, optional: true
       belongs_to :provide, optional: true
-      belongs_to :facilitate_provide, foreign_key: [:facilitate_id, :provide_id], primary_key: [:facilitate_id, :provide_id], counter_cache: true
+      belongs_to :facilitate_provide, foreign_key: [:facilitate_id, :provide_id], primary_key: [:facilitate_id, :provide_id], counter_cache: true, optional: true
 
       before_validation :sync_from_facilitate, if: -> { facilitate_id_changed? }
       before_validation :sync_from_facilitator, if: -> { facilitator_id_changed? }
