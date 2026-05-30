@@ -1,5 +1,9 @@
 <dl class="as-show">
   <div>
+    <dt></dt>
+    <dd><%= image_tag QrcodeUtil.data_url(@provide.invite_url) %></dd>
+  </div>
+  <div>
     <dt><%= Factory::Provide.human_attribute_name(:invite_url) %></dt>
     <dd data-controller="clipboard" style="text-align: start">
       <span data-clipboard-target="source"><%= @provide.invite_url %></span>
