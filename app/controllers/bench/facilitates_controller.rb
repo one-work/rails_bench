@@ -10,7 +10,7 @@ module Bench
       q_params.merge! default_params
       q_params.merge! params.permit(:facilitate_taxon_id)
 
-      @facilitates = Facilitate.default_where(q_params).page(params[:page])
+      @facilitates = Facilitate.with_attached_logo.default_where(q_params).page(params[:page])
     end
 
     def buy
