@@ -2,7 +2,7 @@
   <% @facilitates.group_by(&:facilitate_taxon).each do |taxon, facilitates| %>
     <% if taxon %>
       <div class="box-header">
-        <span class="size-7 has-border-left-primary"><%= taxon.name %></span>
+        <span class="size-7 text-grey has-border-left-primary"><%= taxon.name %></span>
       </div>
     <% end %>
     <%= render partial: 'index_item', layout: 'index_item_actions', collection: facilitates, as: :model %>
