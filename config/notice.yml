@@ -1,0 +1,4 @@
+Bench::Task:
+  default:
+    only: ['title', 'start_at']
+    methods: ['state_i18n']
