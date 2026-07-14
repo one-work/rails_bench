@@ -1,4 +1,4 @@
-<div class="buttons as-bottom">
+<div id="buttons" class="buttons as-bottom">
 <% if @facilitating %>
   <%= button_to({ action: 'edit', id: @facilitating.id }, class: 'button') do %>
     <%= svg_tag 'calendar-check' %>
