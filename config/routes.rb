@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.app.routes.draw do
   concern :tasked do
     collection do
       get 'template' => :new_template
