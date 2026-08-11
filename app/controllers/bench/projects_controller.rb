@@ -1,7 +1,7 @@
 module Bench
   class ProjectsController < BaseController
     before_action :set_project, only: [:show, :github]
-    skip_before_action :verify_authenticity_token, only: [:github]
+    skip_forgery_protection only: [:github]
 
     def index
       @projects = Project.page(params[:page])
