@@ -5,10 +5,10 @@
 <div class="tabs is-centered">
   <ul>
     <li class="<%= active_helper(tasks: ['project', 'show', 'content'], task_timers: 'index', active: 'is-active') %>">
-      <%= link_to t('bench.admin.tasks.project.title'), { controller: 'bench/admin/tasks', action: 'project', project_id: project.id } %>
+      <%= link_to t('bench.admin.tasks.project.title'), { controller: 'bench/admin/tasks', action: 'project', project_id: project.id }, data: { turbo_action: 'replace' } %>
     </li>
     <li class="<%= active_helper(projects: ['show', 'edit'], active: 'is-active') %>">
-      <%= link_to t('bench.admin.projects.show.title'), { controller: 'bench/admin/projects', action: 'show', id: project.id } %>
+      <%= link_to t('bench.admin.projects.show.title'), { controller: 'bench/admin/projects', action: 'show', id: project.id }, data: { turbo_action: 'replace' } %>
     </li>
     <li class="<%= active_helper(controllers: 'budgets', active: 'is-active') %>">
       <%= link_to t('bench.admin.budgets.index.title'), { controller: 'bench/admin/budgets', action: 'index', project_id: project.id } %>
