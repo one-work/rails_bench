@@ -1,5 +1,5 @@
 <div id="buttons" class="buttons as-bottom">
-  <%= button_to({ action: 'start' }, method: :patch, class: 'button is-warning') do %>
+  <%= button_to({ action: 'start' }, method: :patch, class: 'button is-rounded is-primary') do %>
     <span>开始服务</span>
   <% end if @facilitating.start_at.blank? %>
   <%= button_to({ action: 'finish' }, method: :patch, class: 'button is-danger') do %>
