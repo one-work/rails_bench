@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-left as-logo">
-    <%= image_tag model.avatar, class: 'image is-64x64' if model.avatar.attached? %>
+    <%= image_tag model.avatar, class: 'image is-radius is-64x64' if model.avatar.attached? %>
   </div>
   <div class="media-content as-body">
     <%= link_to({ controller: 'facilitators', action: 'show', facilitate_id: @facilitate.id, id: model.id }, class: '') do %>
