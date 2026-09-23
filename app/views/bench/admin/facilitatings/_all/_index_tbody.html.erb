@@ -2,7 +2,7 @@
 <td>
   <% if model.facilitator %>
   <div class="is-several">
-    <%= image_tag model.facilitator.avatar, class: 'image is-24x24' %>
+    <%= image_tag model.facilitator.avatar.variant(resize_to_limit: [24, 24]), class: 'image is-radius is-24x24' %>
     <span><%= model.facilitator.name %></span>
   </div>
   <% end %>
