@@ -1,7 +1,7 @@
 <p class="text-centered py-2">
   <strong><%= facilitating.facilitate.name %></strong>
 </p>
-<dl id="facilitating_<%= facilitating.id %>" class="as-show as-boxed">
+<dl id="facilitating_<%= facilitating.id %>" class="as-show as-boxed is-striped">
   <% facilitating.extra.each do |k, v| %>
     <% unless k.end_with?('i)') %>
     <div>
