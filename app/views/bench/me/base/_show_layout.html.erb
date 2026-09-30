@@ -1,11 +1,9 @@
-<div class="breadcrumb">
-  <ul>
-    <% @task.ancestors.each do |ancestor| %>
-      <li><%= link_to ancestor.title, { controller: 'tasks', action: 'show', id: ancestor.id } %></li>
-    <% end %>
-    <li class="is-active"><%= @task.title %></li>
-  </ul>
-</div>
+<ul class="breadcrumb">
+  <% @task.ancestors.each do |ancestor| %>
+    <li><%= link_to ancestor.title, { controller: 'tasks', action: 'show', id: ancestor.id } %></li>
+  <% end %>
+  <li class="is-active"><%= @task.title %></li>
+</ul>
 
 <div class="columns">
   <div class="column">
